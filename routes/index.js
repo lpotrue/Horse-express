@@ -1,13 +1,28 @@
 const express = require('express');
 const passport = require('passport');
 const Account = require('../models/account');
+const Horse = require('../models/horse');
 const router = express.Router();
 
 
 router.get('/', (req, res) => {
     res.render('index', { user : req.user });
 });
-
+router.get('/profile', (req, res) => {
+    res.render('profile', { user : req.user });
+});
+router.post('/add-horse', (req, res) => {
+    console.log('hello horse')
+var h = new Horse({horsename: 'butter'})
+h.save(function(err) {
+        if (err)
+           throw err;
+        else 
+           console.log('save user successfully...');
+    });
+    //Horse.create({horsename: 'buttercup2'})
+    res.render('profile', { user : req.user });
+})
 router.get('/register', (req, res) => {
     res.render('register', { });
 });
@@ -23,7 +38,7 @@ router.post('/register', (req, res, next) => {
                 if (err) {
                     return next(err);
                 }
-                res.redirect('/');
+                res.redirect('/profile');
             });
         });
     });
@@ -39,7 +54,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
         if (err) {
             return next(err);
         }
-        res.redirect('/');
+        res.redirect('/profile');
     });
 });
 

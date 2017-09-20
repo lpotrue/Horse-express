@@ -1,0 +1,35 @@
+riders: {
+	_id, 
+	name,
+	email,
+	password,
+	training: [
+		horseId1,
+		horseId2,
+		...
+	]
+	ownedHorses: [
+		horseId1,
+		horseId2,
+		...
+	]
+},{...}
+
+horses: {
+	_id,
+	name,
+	ownedBy,
+	riders: [
+		ridersId1,
+		ridersId2,
+		...
+	]
+},{...}
+
+entries: {
+	_id,
+	date,
+	text,
+	writtenBy,
+	horse,
+}
