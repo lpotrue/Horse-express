@@ -9,19 +9,44 @@ router.get('/', (req, res) => {
     res.render('index', { user : req.user });
 });
 router.get('/profile', (req, res) => {
-    res.render('profile', { user : req.user });
+    if(!req.user){
+        return res.redirect("/")
+    }
+    Horse
+        .find({owner: req.user._id})
+        .exec()
+        .then(horses => {
+            console.log('dog')
+            console.log(horses)
+            res.render('profile', { user : req.user, lindsay: 'potrue', horses: horses });
+        })
+        .catch(err => { console.error(err)});
+    
 });
+router.get('/horse/:id', (req, res) => {
+    console.log("random horse", req.params)
+    Horse
+        .findOne({_id: req.params.id})
+        .exec()
+        .then(horse => {
+            console.log('dog')
+            console.log(horse)
+            res.render('horse', { user : req.user, lindsay: 'potrue', horse: horse });
+        })
+        .catch(err => { console.error(err)});
+})
 router.post('/add-horse', (req, res) => {
-    console.log('hello horse')
-var h = new Horse({horsename: 'butter'})
-h.save(function(err) {
+    console.log('hello horse', req.body, req.user)
+    var h = new Horse({horsename: req.body.horsename, owner: req.user._id })
+    h.save(function(err) {
         if (err)
            throw err;
         else 
            console.log('save user successfully...');
     });
     //Horse.create({horsename: 'buttercup2'})
-    res.render('profile', { user : req.user });
+    //res.render('profile', { user : req.user });
+    res.redirect('/profile')
 })
 router.get('/register', (req, res) => {
     res.render('register', { });
