@@ -8,6 +8,19 @@ const router = express.Router();
 router.get('/', (req, res) => {
     res.render('index', { user : req.user });
 });
+router.get('/find', (req, res) => {
+    Account
+        .find({})
+        .exec()
+        .then(users => {
+            res.render('find', { user : req.user, users: users});
+        })
+        .catch(err => { console.error(err)});
+
+    
+});
+
+
 router.get('/profile', (req, res) => {
     if(!req.user){
         return res.redirect("/")
