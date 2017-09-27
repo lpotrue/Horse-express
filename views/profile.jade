@@ -2,14 +2,12 @@ extends layout
 
 block content
   .container
-    h3 profile
+    h3 Profile
     if (!user)
       a(href="/login") Login
       br
       a(href="/register") Register
     if (user)
-      p You are currently logged in as #{user.username}
-      p #{lindsay}
       each horse in horses
           li 
             a(href="/horse/"+horse._id) #{horse.horsename} 

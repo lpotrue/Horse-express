@@ -12,14 +12,14 @@ html
       br
     .menu
       if (!user)
-        a(href="/") home 
+        a(href="/") Home 
         a(href="/login") Login
         a(href="/register") Register
       if (user)
         p You are currently logged in as #{user.username}
-        a(href="/") home
+        a(href="/") Home
 
-        a(href="/profile") profile
+        a(href="/profile") Profile
         a(href="/find") Find Horse
         a(href="/logout") Logout
     block content

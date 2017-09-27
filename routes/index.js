@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const Account = require('../models/account');
 const Horse = require('../models/horse');
+const Entry = require('../models/entry');
 const router = express.Router();
 
 
@@ -12,8 +13,8 @@ router.get('/find', (req, res) => {
     Account
         .find({})
         .exec()
-        .then(users => {
-            res.render('find', { user : req.user, users: users});
+        .then(owners => {
+            res.render('find', { user : req.user, owners: owners});
         })
         .catch(err => { console.error(err)});
 
@@ -31,11 +32,26 @@ router.get('/profile', (req, res) => {
         .then(horses => {
             console.log('dog')
             console.log(horses)
-            res.render('profile', { user : req.user, lindsay: 'potrue', horses: horses });
+            res.render('profile', { user : req.user, horses: horses });
         })
         .catch(err => { console.error(err)});
     
 });
+
+router.get('/owner/:id', (req, res) => {
+    if(!req.user){
+        return res.redirect("/")
+    }
+    Horse
+        .find({owner: req.params.id})
+        .exec()
+        .then(horses => {
+            res.render('owner', { user : req.user, horses: horses });
+        })
+        .catch(err => { console.error(err)});
+    
+});
+
 router.get('/horse/:id', (req, res) => {
     console.log("random horse", req.params)
     Horse
@@ -44,7 +60,7 @@ router.get('/horse/:id', (req, res) => {
         .then(horse => {
             console.log('dog')
             console.log(horse)
-            res.render('horse', { user : req.user, lindsay: 'potrue', horse: horse });
+            res.render('horse', { user : req.user, horse: horse });
         })
         .catch(err => { console.error(err)});
 })
@@ -61,6 +77,23 @@ router.post('/add-horse', (req, res) => {
     //res.render('profile', { user : req.user });
     res.redirect('/profile')
 })
+
+router.post('/horse/:id', (req, res) => {
+    console.log(req.path, req.url, req.originalUrl, req.baseUrl, req.params.id)
+    
+    console.log(req.body.entry)
+    var o = new Entry({entry: req.body.entry, writtenBy: req.user._id})
+    o.save(function(err) {
+        if (err)
+           throw err;
+        else 
+           console.log('save user successfully...');
+    });
+    res.redirect('/profile')
+
+
+})
+
 router.get('/register', (req, res) => {
     res.render('register', { });
 });

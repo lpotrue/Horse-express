@@ -2,5 +2,7 @@ extends layout
 
 block content
   .container
-    h1 Find
-    #{users}
+    h1 Find Horses by Owner 
+    each owner in owners
+         li 
+           a(href="/owner/"+owner._id) #{owner.username} 
