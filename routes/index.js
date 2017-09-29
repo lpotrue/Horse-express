@@ -3,6 +3,7 @@ const passport = require('passport');
 const Account = require('../models/account');
 const Horse = require('../models/horse');
 const Entry = require('../models/entry');
+const Image = require('../models/image');
 const router = express.Router();
 
 
@@ -30,8 +31,6 @@ router.get('/profile', (req, res) => {
         .find({owner: req.user._id})
         .exec()
         .then(horses => {
-            console.log('dog')
-            console.log(horses)
             res.render('profile', { user : req.user, horses: horses });
         })
         .catch(err => { console.error(err)});
@@ -54,16 +53,27 @@ router.get('/owner/:id', (req, res) => {
 
 router.get('/horse/:id', (req, res) => {
     console.log("random horse", req.params)
+    let horse = ''
     Horse
         .findOne({_id: req.params.id})
         .exec()
         .then(horse => {
-            console.log('dog')
             console.log(horse)
-            res.render('horse', { user : req.user, horse: horse });
+            horse = horse
+         Entry
+            .find({horse: req.params.id})
+            .exec()
+            .then(entries => {
+                console.log(entries)
+                res.render('horse', { user : req.user, horse: horse, entries: entries });
+            })
+            .catch(err => { console.error(err)});
+            //res.render('horse', { user : req.user, horse: horse });
         })
         .catch(err => { console.error(err)});
+   
 })
+
 router.post('/add-horse', (req, res) => {
     console.log('hello horse', req.body, req.user)
     var h = new Horse({horsename: req.body.horsename, owner: req.user._id })
@@ -73,23 +83,26 @@ router.post('/add-horse', (req, res) => {
         else 
            console.log('save user successfully...');
     });
+    var newItem = new Image();
+        newItem.img.data = fs.readFileSync(req.files.userPhoto.path)
+        newItem.img.contentType = 'image/png';
+        newItem.save();
     //Horse.create({horsename: 'buttercup2'})
     //res.render('profile', { user : req.user });
     res.redirect('/profile')
 })
 
 router.post('/horse/:id', (req, res) => {
-    console.log(req.path, req.url, req.originalUrl, req.baseUrl, req.params.id)
-    
+
     console.log(req.body.entry)
-    var o = new Entry({entry: req.body.entry, writtenBy: req.user._id})
+    var o = new Entry({entry: req.body.entry, writtenBy: req.user._id, horse: req.params.id})
     o.save(function(err) {
         if (err)
            throw err;
         else 
            console.log('save user successfully...');
     });
-    res.redirect('/profile')
+    res.redirect(`/horse/${req.params.id}`)
 
 
 })
@@ -142,5 +155,6 @@ router.get('/logout', (req, res, next) => {
 router.get('/ping', (req, res) => {
     res.status(200).send("pong!");
 });
+
 
 module.exports = router;

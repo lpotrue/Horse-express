@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 //const passportLocalMongoose = require('passport-local-mongoose');
 
 const Entry = new Schema({
-    horsename: String,
+    horse: String,
     writtenBy: String,
     entry: String
 });

@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var flash = require('connect-flash');
-
+var multer = require('multer');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -53,6 +53,11 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
+//app.use(multer({ dest: "./uploads/",
+ //rename: function (fieldname, filename) {
+   //return filename;
+ //},
+//}));
 
 // error handlers
 
