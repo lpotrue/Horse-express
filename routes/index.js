@@ -4,8 +4,10 @@ const Account = require('../models/account');
 const Horse = require('../models/horse');
 const Entry = require('../models/entry');
 const Image = require('../models/image');
+const fs = require('fs');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 const router = express.Router();
-
 
 router.get('/', (req, res) => {
     res.render('index', { user : req.user });
@@ -74,7 +76,7 @@ router.get('/horse/:id', (req, res) => {
    
 })
 
-router.post('/add-horse', (req, res) => {
+router.post('/add-horse', upload.single('pic'), (req, res) => {
     console.log('hello horse', req.body, req.user)
     var h = new Horse({horsename: req.body.horsename, owner: req.user._id })
     h.save(function(err) {
@@ -84,9 +86,21 @@ router.post('/add-horse', (req, res) => {
            console.log('save user successfully...');
     });
     var newItem = new Image();
-        newItem.img.data = fs.readFileSync(req.files.userPhoto.path)
+        //console.log('horse pic')
+       // console.log(req.files)
+    
+    var FR= new FileReader();
+    
+    /*FR.addEventListener("load", function(e) {
+      document.getElementById("img").src       = e.target.result;
+      document.getElementById("b64").innerHTML = e.target.result;
+    }); 
+    
+  }
+
+        /*newItem.img.data = fs.readFileSync(req.files.pic)
         newItem.img.contentType = 'image/png';
-        newItem.save();
+        newItem.save();*/
     //Horse.create({horsename: 'buttercup2'})
     //res.render('profile', { user : req.user });
     res.redirect('/profile')

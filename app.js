@@ -12,8 +12,11 @@ var flash = require('connect-flash');
 var multer = require('multer');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+const fileUpload = require('express-fileupload');
 
 var app = express();
+app.use(fileUpload());
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

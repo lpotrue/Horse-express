@@ -16,13 +16,15 @@ html
         a(href="/login") Login
         a(href="/register") Register
       if (user)
-        p You are currently logged in as #{user.username}
+        h5 Hello, #{user.username}!
         a(href="/") Home
-
         a(href="/profile") Profile
         a(href="/find") Find Horse
         a(href="/logout") Logout
+      #background
     block content
 
+
   script(src='http://code.jquery.com/jquery.js')
+  script(src='script.js')
   script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
