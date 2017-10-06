@@ -19,6 +19,11 @@ horses: {
 	_id,
 	name,
 	ownedBy,
+	images: [
+		imageId1,
+		imageId2,
+		...
+	]
 	riders: [
 		ridersId1,
 		ridersId2,

@@ -24,12 +24,12 @@ router.get('/', (req, res) => {
 });
 router.get('/find', (req, res) => {
     Account
-        .find({})
-        .exec()
-        .then(owners => {
-            res.render('find', { user : req.user, owners: owners});
-        })
-        .catch(err => { console.error(err)});
+    .find({})
+    .exec()
+    .then(owners => {
+        res.render('find', { user : req.user, owners: owners});
+    })
+    .catch(err => { console.error(err)});
 
     
 });
@@ -40,12 +40,12 @@ router.get('/profile', (req, res) => {
         return res.redirect("/")
     }
     Horse
-        .find({owner: req.user._id})
-        .exec()
-        .then(horses => {
-            res.render('profile', { user : req.user, horses: horses });
-        })
-        .catch(err => { console.error(err)});
+    .find({owner: req.user._id})
+    .exec()
+    .then(horses => {
+        res.render('profile', { user : req.user, horses: horses });
+    })
+    .catch(err => { console.error(err)});
     
 });
 
@@ -54,12 +54,12 @@ router.get('/owner/:id', (req, res) => {
         return res.redirect("/")
     }
     Horse
-        .find({owner: req.params.id})
-        .exec()
-        .then(horses => {
-            res.render('owner', { user : req.user, horses: horses });
-        })
-        .catch(err => { console.error(err)});
+    .find({owner: req.params.id})
+    .exec()
+    .then(horses => {
+        res.render('owner', { user : req.user, horses: horses });
+    })
+    .catch(err => { console.error(err)});
     
 });
 
@@ -67,56 +67,44 @@ router.get('/horse/:id', (req, res) => {
     console.log("random horse", req.params)
     let horse = ''
     Horse
-        .findOne({_id: req.params.id})
-        .exec()
-        .then(horse => {
-            console.log(horse)
-            horse = horse
-         Entry
+    .findOne({_id: req.params.id})
+    .exec()
+    .then(horse => {
+        console.log(horse)
+        horse = horse
+        Entry
             .find({horse: req.params.id})
             .exec()
             .then(entries => {
                 console.log(entries)
                 res.render('horse', { user : req.user, horse: horse, entries: entries });
+                res.end()
             })
+
             .catch(err => { console.error(err)});
             //res.render('horse', { user : req.user, horse: horse });
-        })
-        .catch(err => { console.error(err)});
-   
+    })
+    .catch(err => { console.error(err)});
+
 })
 
 router.post('/add-horse', (req, res) => {
-    console.log('hello horse', req.body, req.user, req.files, req.file)
-
-
-   upload(req,res,function(err) {
-    console.log('upload horse', req.body, req.user, req.files, req.file)
-	   
-        if(err) {
-	    console.log(err); 
-	    throw err;
-            return res.end("Error uploading file.");
-        }
-   
-	console.log('yooo')
-       	console.log(req.body);
-        res.end("File is uploaded");
-   
-
-    });
-
-	
-
-
-    var h = new Horse({horsename: req.body.horsename, owner: req.user._id })
-    h.save(function(err) {
-        if (err)
+    upload(req,res,function(err) {
+        console.log('upload horse', req.body, req.user, req.files, req.file)
+           if(err) {
            throw err;
-        else 
-           console.log('save user successfully...');
+           return res.end("Error uploading file.");
+       }
+       console.log("Louie", req.file)
+       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, images: [req.file.filename]})
+        h.save(function(err) {
+            if (err)
+            throw err;
+            else 
+            console.log('save horse successfully...');
+        });
+       res.redirect('/profile')
     });
-      res.redirect('/profile')
 })
 
 router.post('/horse/:id', (req, res) => {
@@ -125,10 +113,10 @@ router.post('/horse/:id', (req, res) => {
     var o = new Entry({entry: req.body.entry, writtenBy: req.user._id, horse: req.params.id})
     o.save(function(err) {
         if (err)
-           throw err;
-        else 
-           console.log('save user successfully...');
-    });
+         throw err;
+     else 
+         console.log('save entry successfully...');
+ });
     res.redirect(`/horse/${req.params.id}`)
 
 
@@ -142,17 +130,17 @@ router.post('/register', (req, res, next) => {
     Account.register(new Account({ username : req.body.username }), req.body.password, (err, account) => {
         if (err) {
           return res.render('register', { error : err.message });
-        }
+      }
 
-        passport.authenticate('local')(req, res, () => {
-            req.session.save((err) => {
-                if (err) {
-                    return next(err);
-                }
-                res.redirect('/profile');
-            });
+      passport.authenticate('local')(req, res, () => {
+        req.session.save((err) => {
+            if (err) {
+                return next(err);
+            }
+            res.redirect('/profile');
         });
     });
+  });
 });
 
 

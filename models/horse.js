@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const Horse = new Schema({
     horsename: String,
-    owner: String
+    owner: String,
+    images: Array
 });
 
 //Horse.plugin(passportLocalMongoose);

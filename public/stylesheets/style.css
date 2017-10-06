@@ -35,11 +35,13 @@ h1 {
 	margin: auto;
 }
 
-
+.horse-pics {
+  width: 100%;
+}
 
 #background {
-  //background-image: url("https://image.ibb.co/mSRvdw/IMG_0882.jpg");
-  background-image: url("../uploads/e65fd539ffca421c807f003d11a17c5e");
+  background-image: url("https://image.ibb.co/mSRvdw/IMG_0882.jpg");
+  //background-image: url("../uploads/109f2c01fe647de0f139376842b258ad");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

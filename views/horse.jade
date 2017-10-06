@@ -3,6 +3,9 @@ extends layout
 block content
   .container
    h1 #{horse.horsename}
+   h4 #{horse.images}
+   each image in horse.images
+    img(src="/uploads/#{image}", class="horse-pics")
    each entry in entries
          li 
            a(href="/entry/"+entry._id) #{entry.entry} 
@@ -10,6 +13,6 @@ block content
        .form-group
            input.form-control(type='text', name="entry", placeholder='Make Entry')
        button.btn.btn-default(type='submit') Submit
-       &nbsp;
+      
        a(href='/')
          button.btn.btn-primary(type="button") Cancel
