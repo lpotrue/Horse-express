@@ -6,8 +6,18 @@ const Entry = require('../models/entry');
 const Image = require('../models/image');
 const fs = require('fs');
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: './public/uploads/' }).single('pic');
 const router = express.Router();
+
+
+/*
+var express = require('express');
+var fs = require('fs'); // file system, to save files
+var request = require('request');
+var url = require('url'); // to parse URL and separate filename from path
+var progress = require('progress-stream'); // to have a progress bar during upload
+
+*/
 
 router.get('/', (req, res) => {
     res.render('index', { user : req.user });
@@ -76,8 +86,29 @@ router.get('/horse/:id', (req, res) => {
    
 })
 
-router.post('/add-horse', upload.single('pic'), (req, res) => {
-    console.log('hello horse', req.body, req.user)
+router.post('/add-horse', (req, res) => {
+    console.log('hello horse', req.body, req.user, req.files, req.file)
+
+
+   upload(req,res,function(err) {
+    console.log('upload horse', req.body, req.user, req.files, req.file)
+	   
+        if(err) {
+	    console.log(err); 
+	    throw err;
+            return res.end("Error uploading file.");
+        }
+   
+	console.log('yooo')
+       	console.log(req.body);
+        res.end("File is uploaded");
+   
+
+    });
+
+	
+
+
     var h = new Horse({horsename: req.body.horsename, owner: req.user._id })
     h.save(function(err) {
         if (err)
@@ -85,25 +116,7 @@ router.post('/add-horse', upload.single('pic'), (req, res) => {
         else 
            console.log('save user successfully...');
     });
-    var newItem = new Image();
-        //console.log('horse pic')
-       // console.log(req.files)
-    
-    var FR= new FileReader();
-    
-    /*FR.addEventListener("load", function(e) {
-      document.getElementById("img").src       = e.target.result;
-      document.getElementById("b64").innerHTML = e.target.result;
-    }); 
-    
-  }
-
-        /*newItem.img.data = fs.readFileSync(req.files.pic)
-        newItem.img.contentType = 'image/png';
-        newItem.save();*/
-    //Horse.create({horsename: 'buttercup2'})
-    //res.render('profile', { user : req.user });
-    res.redirect('/profile')
+      res.redirect('/profile')
 })
 
 router.post('/horse/:id', (req, res) => {

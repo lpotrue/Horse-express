@@ -13,12 +13,11 @@ block content
             a(href="/horse/"+horse._id) #{horse.horsename} 
 
       
-      form(role='form', action="/add-horse", method="post", style='max-width: 300px;')
+      //form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
        .form-group
            input.form-control(type='text', name="horsename", placeholder='Enter Horsename')
            
-           input(type='file' name='pic' enctype="multipart/form-data")
-           input#inp(type='file')
+           input#inp(type='file' name='pic')
            p#b64
            img#img(height='150')
 
@@ -26,4 +25,8 @@ block content
        &nbsp;
        a(href='/')
          button.btn.btn-primary(type="button") Cancel
+
+      form(action='/add-horse', method='post', enctype='multipart/form-data')
+       input(type='file', name='pic', accept='application/x-zip-compressed,image/*')
+       input(type='submit', value='Upload selected file to server')
 

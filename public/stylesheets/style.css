@@ -38,7 +38,8 @@ h1 {
 
 
 #background {
-  background-image: url("https://image.ibb.co/mSRvdw/IMG_0882.jpg");
+  //background-image: url("https://image.ibb.co/mSRvdw/IMG_0882.jpg");
+  background-image: url("../uploads/e65fd539ffca421c807f003d11a17c5e");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
