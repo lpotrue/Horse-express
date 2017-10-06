@@ -96,7 +96,7 @@ router.post('/add-horse', upload.single('pic'), (req, res) => {
       document.getElementById("b64").innerHTML = e.target.result;
     }); 
     
-  }
+  }*/
 
         /*newItem.img.data = fs.readFileSync(req.files.pic)
         newItem.img.contentType = 'image/png';
