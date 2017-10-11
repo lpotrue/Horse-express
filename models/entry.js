@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const Entry = new Schema({
     horse: String,
     writtenBy: String,
-    entry: String
+    entry: String,
+    date: String
 });
 
 //Horse.plugin(passportLocalMongoose);

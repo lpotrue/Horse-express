@@ -110,7 +110,7 @@ router.post('/add-horse', (req, res) => {
 router.post('/horse/:id', (req, res) => {
 
     console.log(req.body.entry)
-    var o = new Entry({entry: req.body.entry, writtenBy: req.user._id, horse: req.params.id})
+    var o = new Entry({entry: req.body.entry, writtenBy: req.user._id, horse: req.params.id, date: new Date()})
     o.save(function(err) {
         if (err)
          throw err;

@@ -6,52 +6,108 @@ a {
   color: #00B7FF;
 }
 
-h1 {
-	align-content: center;
+.item {
+  box-sizing: border-box;
+  //font-size: 4.2rem;
+  line-height: 40%;
+  //margin: 2.1rem 0 1.68rem 0;
+  z-index: 2;
+  position: absolute;
+  display: block;
+  font-size: 140%;
+  padding-left: 45%;
+  top: 400px;
+  color: white;
+}
+
+.form-control-horse {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-weight: lighter;
+  border-top: 2px solid white;
+  padding-top: 3%;
+  text-align: right;
+}
+
+h3 {
+//font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-weight: normal;
+padding-top: 30%;
+text-align: right;
 }
 
 .menu a:hover {
 	color: red;
 }
 
+img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+}
+
 .menu a {
-	box-sizing: border-box;
-	padding-left: 15px;
-	padding-right: 15px;
 	text-align: center;
-	background: #eee;
+	//background: #eee;
+  background: #00B7FF;
 	box-sizing: border-box;
-    width: 100%;
-    height: 3%;
-    //background-color: rgba(0, 0, 0, .8);
-    border: 1px solid grey;
-    filter: alpha(opacity=80); 
-    color: #00B7FF;
-    position: relative; 
-    z-index: 2;
+  width: 100%;
+  height: 8%;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+  //background-color: rgba(0, 0, 0, .8);
+  //border: 1px solid black;
+  filter: alpha(opacity=80); 
+  //color: #00B7FF;
+  color: red;
+  position: absolute; 
+  float: right;
 }
 
 .container{
 	margin: auto;
 }
 
+.form-group {
+  padding-bottom: 5%;
+}
+
 .horse-pics {
   width: 100%;
+}
+
+.background-2 {
+  position: relative;
+  background: #00B7FF;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
 }
 
 #background {
   background-image: url("https://image.ibb.co/mSRvdw/IMG_0882.jpg");
   //background-image: url("../uploads/109f2c01fe647de0f139376842b258ad");
+  position: relative;
+  overflow: hidden;
+  height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 500px;
-  width: 100%;
-  position: relative;
+  z-index: 1;
 }
 @media only screen and (max-width: 500px) {
  #background{ height: 300px}
-}
+}*/
 
 
 h5 {
