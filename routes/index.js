@@ -20,7 +20,16 @@ var progress = require('progress-stream'); // to have a progress bar during uplo
 */
 
 router.get('/', (req, res) => {
-    res.render('index', { user : req.user });
+    console.log("homepage")
+    Horse
+    .find({})
+    .exec()
+    .then(horses => {
+        
+        res.render('index', { user : req.user,  horses: horses });
+    })
+    .catch(err => { console.error(err)});
+    //res.render('index', { user : req.user });
 });
 router.get('/find', (req, res) => {
     Account
@@ -63,6 +72,20 @@ router.get('/owner/:id', (req, res) => {
     
 });
 
+router.get('/entry/:id', (req, res) => {
+    console.log("vanilla", req.params.id)
+   
+    Entry
+    .findOne({_id: req.params.id})
+    .exec()
+    .then(entry => {
+         res.render('entry', {entry: entry})
+         console.log(entry)
+    })
+})
+
+
+
 router.get('/horse/:id', (req, res) => {
     console.log("random horse", req.params)
     let horse = ''
@@ -98,10 +121,10 @@ router.post('/add-horse', (req, res) => {
        console.log("Louie", req.file)
        var h = new Horse({horsename: req.body.horsename, owner: req.user._id, images: [req.file.filename]})
         h.save(function(err) {
-            if (err)
-            throw err;
-            else 
-            console.log('save horse successfully...');
+            if (err){
+             throw (err);
+         }
+            else {console.log('save horse successfully...');} 
         });
        res.redirect('/profile')
     });
@@ -112,10 +135,11 @@ router.post('/horse/:id', (req, res) => {
     console.log(req.body.entry)
     var o = new Entry({entry: req.body.entry, writtenBy: req.user._id, horse: req.params.id, date: new Date()})
     o.save(function(err) {
-        if (err)
+        if (err){
          throw err;
-     else 
-         console.log('save entry successfully...');
+        }
+     else{console.log('save entry successfully...');}
+         
  });
     res.redirect(`/horse/${req.params.id}`)
 

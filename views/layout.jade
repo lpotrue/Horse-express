@@ -7,6 +7,8 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet")
+    link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
+
   body
     if (error && error.length > 0)
       br
@@ -14,21 +16,26 @@ html
       br
     .menu
       if (!user)
-        a(href="/") Home 
         a(href="/login") Login
-        a(href="/register") Register
+        //a(href="/") Home 
+        .logo 
+          img.logo(src="https://image.ibb.co/fX03Ow/IMG_3420.jpg.jpg" alt="Logo")
+          a(href="/")
       if (user)
         h5 Hello, #{user.username}!
-        a(href="/") Home
+        //a(href="/") Home
         a(href="/profile") Profile
         a(href="/find") Find Horse
         a(href="/logout") Logout
-      #background
-      .item
-        h2 every stride of the way...
+        .logo 
+         img.logo(src="https://image.ibb.co/fX03Ow/IMG_3420.jpg.jpg" alt="Logo")
+         a(href="/")
+      //#background
+      //.item
+       // h2 every stride of the way...
     block content
 
 
   script(src='http://code.jquery.com/jquery.js')
-  script(src='script.js')
+  script(src='http://localhost:3000/script.js')
   script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
