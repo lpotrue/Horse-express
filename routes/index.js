@@ -119,7 +119,7 @@ router.post('/add-horse', (req, res) => {
            return res.end("Error uploading file.");
        }
        console.log("Louie", req.file)
-       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, images: [req.file.filename]})
+       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, horseage: req.body.bday, images: [req.file.filename]})
         h.save(function(err) {
             if (err){
              throw (err);
@@ -179,6 +179,22 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
         }
         res.redirect('/profile');
     });
+});
+
+router.delete('/entry/:id', (req, res) => {
+  console.log("kitty")
+  //Entry.delete(req.params.id);
+  Entry.findOne({'_id':req.params.id})
+  .exec()
+    .then(entry => {
+     console.log(entry)
+     //res.redirect('/')
+     res.send({redirect: `/horse/${entry.horse}`});
+     entry.remove()
+    })
+    .catch(err => { console.error(err)});
+  console.log(`Deleted an entry`);
+  //res.status(204).end();
 });
 
 router.get('/logout', (req, res, next) => {

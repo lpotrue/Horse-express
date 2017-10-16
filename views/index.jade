@@ -1,23 +1,19 @@
 extends layout
 block content
   .container
-   if(horses)
-    .slideshow-container
-      each horse in horses
-       .mySlides.fade
-        img(src="/uploads/#{horse.images[0]}", class="horse-pics", id="background")
-        .text #{horse.horsename}
-    div(style='text-align:center')
-     each horse in horses
-      span.dot
+  
+   #background
+      .item
+        h2 every stride of the way...
 
 
     .explanation
-     h1 An easy way to track your rides  
+     h4 An easy way to track your rides  
      p Horse Tracker gives you an easy to use platform to help you track the progess your horses, keep a well organized workout schedule and assess beneficial training techniques.
      .register-button
-       a(href="/register") GET STARTED 
+      a(href="/register") GET STARTED 
 
+       
        
 
  

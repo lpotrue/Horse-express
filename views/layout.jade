@@ -16,8 +16,8 @@ html
       br
     .menu
       if (!user)
+        .login
         a(href="/login") Login
-        //a(href="/") Home 
         .logo 
           img.logo(src="https://image.ibb.co/fX03Ow/IMG_3420.jpg.jpg" alt="Logo")
           a(href="/")
@@ -30,9 +30,6 @@ html
         .logo 
          img.logo(src="https://image.ibb.co/fX03Ow/IMG_3420.jpg.jpg" alt="Logo")
          a(href="/")
-      //#background
-      //.item
-       // h2 every stride of the way...
     block content
 
 

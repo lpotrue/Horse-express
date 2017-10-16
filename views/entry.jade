@@ -1,6 +1,9 @@
 extends layout
 
 block content
-  h1 entry #{entry.entry}
-  h2 date #{entry.date}
-  button#delete delete 
+  h5 Entry on #{entry.date}
+  h5 #{entry.entry}
+  
+  button.btn.btn-default(type='delete' id='delete') Delete
+
+  

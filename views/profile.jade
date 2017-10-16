@@ -2,6 +2,15 @@ extends layout
 
 block content
   .container
+   if(horses)
+    .slideshow-container
+      each horse in horses
+       .mySlides.fade
+        img(src="/uploads/#{horse.images[0]}", class="horse-pics", id="background")
+        .text #{horse.horsename}
+    div(style='text-align:center')
+     each horse in horses
+      span.dot
     h3 Profile
     if (!user)
       a(href="/login") Login
@@ -11,12 +20,10 @@ block content
       each horse in horses
           li 
             a(href="/horse/"+horse._id) #{horse.horsename} 
-
-      
       form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
        .form-group
            input.form-control(type='text', name="horsename", placeholder='Enter Horsename')
-           
+       form(action='/action_page.php')
            input#inp(type='file' name='pic')
            p#b64
            img#img(height='150')
