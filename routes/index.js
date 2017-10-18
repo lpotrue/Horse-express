@@ -119,7 +119,7 @@ router.post('/add-horse', (req, res) => {
            return res.end("Error uploading file.");
        }
        console.log("Louie", req.file)
-       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, horsebday: req.body.horsebday, breed: req.body.breed, discipline: req.body.discipline, images: [req.file.filename]})
+       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, images: [req.file.filename]})
         h.save(function(err) {
             if (err){
              throw (err);
@@ -131,9 +131,9 @@ router.post('/add-horse', (req, res) => {
 })
 
 router.post('/horse/:id', (req, res) => {
-
-    console.log(req.body.entry)
-    var o = new Entry({entry: req.body.entry, writtenBy: req.user._id, horse: req.params.id, date: new Date()})
+    console.log(req.body)
+    console.log('zebra')
+    var o = new Entry({entry: req.body.entry, writtenBy: req.user._id, horse: req.params.id, stars: req.body.star, date: new Date()})
     o.save(function(err) {
         if (err){
          throw err;

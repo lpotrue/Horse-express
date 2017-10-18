@@ -6,6 +6,7 @@ const Entry = new Schema({
     horse: String,
     writtenBy: String,
     entry: String,
+    stars: Number,
     date: String
 });
 

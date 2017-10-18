@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const Horse = new Schema({
     horsename: String,
     owner: String,
+    stars: String,
     images: Array
 });
 

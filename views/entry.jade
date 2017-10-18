@@ -3,7 +3,21 @@ extends layout
 block content
   h5 Entry on #{entry.date}
   h5 #{entry.entry}
-  
+  h4 #{typeof entry.stars}
+  .cont
+   .stars
+   
+      input#star-5-2.star.star-5(type='radio', name='star', value='5', checked=(entry.stars===5 ? "checked" : undefined))
+      label.star.star-5(for='star-5-2')
+      input#star-4-2.star.star-4(type='radio', name='star', value='4', checked=(entry.stars===4 ? "checked" : undefined))
+      label.star.star-4(for='star-4-2')
+      input#star-3-2.star.star-3(type='radio', name='star', value='3', checked=(entry.stars===3 ? "checked" : undefined))
+      label.star.star-3(for='star-3-2')
+      input#star-2-2.star.star-2(type='radio', name='star', value='2', checked=(entry.stars===2 ? "checked" : undefined))
+      label.star.star-2(for='star-2-2')
+      input#star-1-2.star.star-1(type='radio', name='star', value='1', checked=(entry.stars===1 ? "checked" : undefined))
+      label.star.star-1(for='star-1-2')
+
   button.btn.btn-default(type='delete' id='delete') Delete
 
   

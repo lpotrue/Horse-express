@@ -2,6 +2,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+a:hover {
+  color: #9ecaed;
+}
 
 
 p {
@@ -94,7 +97,9 @@ h6 {
   color: black;
   margin: auto;
   font-size: 2.5em;
-  padding-top: 30%;
+  padding-top: 25%;
+  align-content: center;
+  margin-left: 15%;
 }
 
 .menu a:hover {
@@ -116,9 +121,18 @@ img.logo:hover {
   box-shadow: 0 0 10px #9ecaed;
 }
 
-a {
-  color: #00B7FF;
+.logged-in a {
+  border-top: 1px solid white;
+  padding-top: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  color: white;
+  //color: #00B7FF;
   text-decoration: none;
+}
+
+.logged-in a:hover {
+  color: #9ecaed;
 }
 
 .menu a{
@@ -152,18 +166,16 @@ a {
   
 }
 
-.logged-in {
+.logged-in{
   font-family: 'Raleway', sans-serif;
    z-index: 2;
   text-align: center;
   box-sizing: border-box;
-  width: 33.3%;
   width: 100%;
   height: 100px;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
   background-color: rgba(0, 0, 255, 0.7);
   filter: alpha(opacity=80); 
-  //color: #00B7FF;
   color: white;
   position: relative; 
   float: right;
@@ -184,9 +196,16 @@ a {
   border: 2px solid #dadada;
   width: 175px;
   height: 30px;
+
 }
 
-.register-button:focus { 
+.register-button a {
+  color: white;
+  text-decoration: none;
+  margin-top: 1%;
+}
+
+.register-button:hover { 
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
@@ -223,6 +242,7 @@ input.form-control{
 form {
   display: block;
   margin: auto;
+  padding-bottom: 4%;
 }
 
 input.form-control:focus {
@@ -233,6 +253,10 @@ input.form-control:focus {
 
 li {
  list-style-image: url('sqpurple.gif');
+}
+
+.profile-btn {
+ align-items: center;
 }
 
 .explanation{
