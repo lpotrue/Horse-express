@@ -11,15 +11,16 @@ block content
     div(style='text-align:center')
      each horse in horses
       span.dot
-    h3 Profile
+    
     if (!user)
       a(href="/login") Login
       br
       a(href="/register") Register
     if (user)
       each horse in horses
-          li 
-            a(href="/horse/"+horse._id) #{horse.horsename} 
+          li.my-horses
+            a(href="/horse/"+horse._id) #{horse.horsename}
+      h6 Add a Horse 
       form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
        .form-group
            input.form-control(type='text', name="horsename", placeholder='Enter Horsename')

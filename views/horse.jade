@@ -2,16 +2,14 @@ extends layout
 
 block content
   .container
-   h1 #{horse.horsename}
+   h5 #{horse.horsename}
    each image in horse.images
     img(src="/uploads/#{image}", class="horse-pics", id="background")
-   each entry in entries
-         li 
-           a(href="/entry/"+entry._id) #{entry.entry} #{entry.date}
    form(role='form', action="", method="post", style='max-width: 300px;')
        .form-group
-           textarea.form-control-horse(type='text', name="entry", placeholder='Make Entry')
-           //.cont
+           textarea.form-control-horse(type='text', name="entry", placeholder='Make an Entry about #{horse.horsename}')
+          h6 Rate your session
+          .cont
               .stars
                 form(action='')
                   input#star-5-2.star.star-5(type='radio', name='star')
@@ -27,5 +25,11 @@ block content
 
        button.btn.btn-default(type='submit') Submit
       
-       a(href='/')
+       a(href='/horse')
          button.btn.btn-primary(type="button") Cancel
+       h4 #{horse.horsename}'s Entries
+    if (!entries)
+     h6 #{horse.horsename} doesn't have any entries yet...
+   each entry in entries
+         li 
+           a(href="/entry/"+entry._id) #{entry.entry} #{entry.date}

@@ -5,9 +5,11 @@ body {
 
 
 p {
-  padding-right: 5%;
-  padding-left: 5%;
-  font-size: 1.5em;
+  display: none;
+  //padding-right: 5%;
+  //padding-left: 5%;
+  //font-size: 1.5em;
+  //position: fixed;
 }
 
 .item {
@@ -33,6 +35,15 @@ p {
     background-color: #f8f8f8;
 }
 
+h1 {
+  font-family: 'Cinzel', serif;
+  font-weight: lighter;
+  color: white;
+  padding-top: 25%;
+  padding-left: 10%;
+  font-size: 2.5em;
+}
+
 h2 {
   font-family: 'Cinzel', serif;
   font-weight: lighter;
@@ -52,19 +63,46 @@ font-family: 'Raleway', sans-serif;
 font-weight: normal;
 padding-top: 30%;
 text-align: right;
+color: white;
 }
 
 h4 {
   padding-top: 4%;
-  padding-left: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 150%;
+}
+
+h5 {
+  font-family: 'Cinzel', serif;
+  font-weight: lighter;
+  color: black;
+  margin: auto;
   font-size: 2.5em;
+}
+
+h6 {
+  font-size: 15px;
+  color: grey;
+  text-align: center;
+  padding-top: 3%;
+}
+
+.intro {
+  font-family: 'Cinzel', serif;
+  font-weight: lighter;
+  color: black;
+  margin: auto;
+  font-size: 2.5em;
+  padding-top: 30%;
 }
 
 .menu a:hover {
 	color: red;
 }
 
-img.logo {
+img.logo{
+  display: block;
   float: left;
   z-index: 5;
   position: absolute;
@@ -73,14 +111,22 @@ img.logo {
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
 
-a {
-  color: #00B7FF;
+img.logo:hover {
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
 }
 
-a .menu{
-  width: 33.3%;
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+.menu a{
+  padding-top: 2%;
+  padding-right: 2%;
   color: white;
   text-decoration: none;
+  float: right;
 }
 
 .menu {
@@ -92,8 +138,8 @@ a .menu{
 	box-sizing: border-box;
   width: 100%;
   height: 100px;
-  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
-  background-color: rgba(0, 0, 255, 0.7);
+  //box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+  //background-color: rgba(0, 0, 255, 0.7);
   filter: alpha(opacity=80); 
   //color: #00B7FF;
   color: white;
@@ -103,7 +149,7 @@ a .menu{
 
 .login {
   float: right;
-  margin-left: 90%;
+  
 }
 
 .logged-in {
@@ -124,20 +170,20 @@ a .menu{
   text-decoration: none;
 }
 
-.register-button a{
+.register-button {
+ display: block;
   margin: auto;
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
   color: white;
   background-color: gold;
-  width: 10%;
-  height: 5%;
-  margin: auto;
   text-align: center;
   text-decoration: none;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
-  border-radius: 15px;
+  border-radius: 5px;
   border: 2px solid #dadada;
+  width: 175px;
+  height: 30px;
 }
 
 .register-button:focus { 
@@ -146,20 +192,74 @@ a .menu{
     box-shadow: 0 0 10px #9ecaed;
 }
 
-.explanation{
+input.form-control{
   box-sizing: border-box;
   width: 100%;
-  height: 15%;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.btn-primary, .btn-default{
+   border-radius: 5px;
+   width: 30%;
+   height: 30px;
+   color: white;
+   //background: #4D4845;
+   background-color: rgba(0, 0, 255, 0.7);
+}
+
+.btn-primary:hover {
+  outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+.btn-default:hover {
+  outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+form {
+  display: block;
+  margin: auto;
+}
+
+input.form-control:focus {
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+ 
+}
+
+li {
+ list-style-image: url('sqpurple.gif');
+}
+
+.explanation{
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  height: 30%;
   margin: 0;
+  font-weight: lighter;
+  background:rgba(0, 0, 0, 0.8);
   font-family: 'Raleway', sans-serif;
-  background-color: rgba(0, 0, 255, 0.7);
+  //background-color: rgba(0, 0, 255, 0.7);
+  //background: #4D4845;
   color: white;
- padding-bottom: 5%;
+  padding-bottom: 5%;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
 
 .caramia {
   background-image: url("https://image.ibb.co/niBzJ6/Messages_Image_1176467859.jpg");
-  height: 300px;
+  position: absolute;
+  overflow: hidden;
+  height: 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
 }
 
 .container{
@@ -206,11 +306,6 @@ a .menu{
 }
 @media only screen and (max-width: 500px) {
  #background{ height: 300px}
-}
-
-
-h5 {
-	color: red;
 }
 
 div.stars {

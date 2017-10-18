@@ -2,8 +2,8 @@ extends layout
 
 block content
   .container
-  .caramia
-    h4 Login to Horse Tracker
+ 
+  .intro Login to Horse Tracker
     p. 
     br
     form(role='form', action="/login",method="post", style='max-width: 300px;')
@@ -11,7 +11,13 @@ block content
           input.form-control(type='text', name="username", placeholder='Enter Username')
       .form-group
         input.form-control(type='password', name="password", placeholder='Password')
-      button.btn.btn-default(type='submit') Submit
+      button.btn.btn-primary(type='submit') SUBMIT
       &nbsp;
       a(href='/')
-        button.btn.btn-primary(type="button") Cancel
+        button.btn.btn-primary(type="button") CANCEL
+
+  .explanation
+   h4 An easy way to track your rides  
+    h4 Horse Tracker gives you an easy to use platform to help you track the progess your horses, keep a well organized workout schedule and assess beneficial training techniques.
+    .register-button
+     a(href="/register") GET STARTED 
