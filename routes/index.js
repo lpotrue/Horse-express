@@ -119,7 +119,7 @@ router.post('/add-horse', (req, res) => {
            return res.end("Error uploading file.");
        }
        console.log("Louie", req.file)
-       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, images: [req.file.filename]})
+       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, age: req.body.age, breed: req.body.breed, discipline: req.body.disclipine, images: [req.file.filename]})
         h.save(function(err) {
             if (err){
              throw (err);

@@ -16,10 +16,10 @@ html
       br
     .top
       if (!user)
-        .login
-        a(href="/login") Login
-       .logo 
-       a(href="/")
+       .login-button
+         a(href="/login") Login
+      .logo 
+      a(href="/")
         img.logo(src="https://image.ibb.co/fX03Ow/IMG_3420.jpg.jpg" alt="Logo")
       if (user)
        .logged-in

@@ -1,10 +1,11 @@
 extends layout
 
 block content
+  link(rel='stylesheet', href='/stylesheets/profile.css')
   .container
    h5 #{horse.horsename}
    each image in horse.images
-    img(src="/uploads/#{image}", class="horse-pics", id="background")
+    img(src="/uploads/#{image}", class="horse-pics", id="background", style='max-width: 350px';)
    form(role='form', action="", method="post", style='max-width: 300px;')
        .form-group
            textarea.form-control-horse(type='text', name="entry", placeholder='Make an Entry about #{horse.horsename}')

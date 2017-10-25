@@ -4,6 +4,9 @@ const Schema = mongoose.Schema;
 
 const Horse = new Schema({
     horsename: String,
+    age: String,
+    breed: String,
+    discipline: String,
     owner: String,
     stars: String,
     images: Array

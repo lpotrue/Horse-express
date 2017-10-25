@@ -1,9 +1,10 @@
 extends layout
 
 block content
-  h5 Entry on #{entry.date}
-  h5 #{entry.entry}
-  h4 #{typeof entry.stars}
+  link(rel='stylesheet', href='/stylesheets/entry.css')
+  
+  .date  Entry on #{entry.date}
+  .entry #{entry.entry}
   .cont
    .stars
    
@@ -18,6 +19,6 @@ block content
       input#star-1-2.star.star-1(type='radio', name='star', value='1', checked=(entry.stars===1 ? "checked" : undefined))
       label.star.star-1(for='star-1-2')
 
-  button.btn.btn-default(type='delete' id='delete') Delete
+   button.btn.btn-default(type='delete' id='delete') Delete
 
   
