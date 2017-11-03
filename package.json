@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "make test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
