@@ -1,36 +1,50 @@
 extends layout
 
 block content
-  link(rel='stylesheet', href='/stylesheets/profile.css')
+  link(rel='stylesheet', href='/stylesheets/horse.css')
+  link(rel='stylesheet', href='/stylesheets/stars.css')
   .container
-   h5 #{horse.horsename}
-   each image in horse.images
-    img(src="/uploads/#{image}", class="horse-pics", id="background", style='max-width: 350px';)
-   form(role='form', action="", method="post", style='max-width: 300px;')
-       .form-group
-           textarea.form-control-horse(type='text', name="entry", placeholder='Make an Entry about #{horse.horsename}')
-          h6 Rate your session
-          .cont
-              .stars
-                form(action='')
-                  input#star-5-2.star.star-5(type='radio', checked="true", name='star', value='5')
-                  label.star.star-5(for='star-5-2')
-                  input#star-4-2.star.star-4(type='radio', name='star', value='4')
-                  label.star.star-4(for='star-4-2')
-                  input#star-3-2.star.star-3(type='radio', name='star', value='3')
-                  label.star.star-3(for='star-3-2')
-                  input#star-2-2.star.star-2(type='radio', name='star', value='2')
-                  label.star.star-2(for='star-2-2')
-                  input#star-1-2.star.star-1(type='radio', name='star', value='1')
-                  label.star.star-1(for='star-1-2')
 
-              button.btn.btn-default(type='submit') Submit
+   .horse-info
+      each image in horse.images
+          img(src="/uploads/#{image}", class="img-circle", id="img-circle")
+       .info
+        h2 #{horse.horsename}
+        h6 Born in: #{horse.age}
+        h6 Breed: #{horse.breed}
+        h6 Owned by: #{horse.owner}
+        
       
-              a(href='/horse')
+   .band
+    h3 #{horse.horsename}'s Entries
+ 
+    each entry in entries
+         
+          li
+            a(href="/entry/"+entry._id)  #{entry.date}
+        .entry-area
+
+        form(role='form', action="", method="post", style='max-width: 300px;')
+            .form-group
+                 textarea.form-control(type='text', name="entry", placeholder='Make an Entry about #{horse.horsename}')
+                 
+          
+              h3 Rate your session
+              .cont
+                .stars
+                    
+                      input#star-5-2.star.star-5(type='radio', checked="true", name='star', value='5')
+                      label.star.star-5(for='star-5-2')
+                      input#star-4-2.star.star-4(type='radio', name='star', value='4')
+                      label.star.star-4(for='star-4-2')
+                      input#star-3-2.star.star-3(type='radio', name='star', value='3')
+                      label.star.star-3(for='star-3-2')
+                      input#star-2-2.star.star-2(type='radio', name='star', value='2')
+                      label.star.star-2(for='star-2-2')
+                      input#star-1-2.star.star-1(type='radio', name='star', value='1')
+                      label.star.star-1(for='star-1-2')
+
+            button.btn.btn-default(type='submit') Submit
+            &nbsp;
+            a(href='/')
               button.btn.btn-primary(type="button") Cancel
-       h4 #{horse.horsename}'s Entries
-    if (!entries)
-     h6 #{horse.horsename} doesn't have any entries yet...
-   each entry in entries
-         li 
-           a(href="/entry/"+entry._id) #{entry.entry} #{entry.date}

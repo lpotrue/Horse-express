@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
     .catch(err => { console.error(err)});
     //res.render('index', { user : req.user });
 });
-router.get('/find', (req, res) => {
+router.get('/find', loggedIn, (req, res) => {
     Account
     .find({})
     .exec()
@@ -44,10 +44,7 @@ router.get('/find', (req, res) => {
 });
 
 
-router.get('/profile', (req, res) => {
-    if(!req.user){
-        return res.redirect("/")
-    }
+router.get('/profile', loggedIn, (req, res) => {
     Horse
     .find({owner: req.user._id})
     .exec()
@@ -58,21 +55,23 @@ router.get('/profile', (req, res) => {
     
 });
 
-router.get('/owner/:id', (req, res) => {
-    if(!req.user){
-        return res.redirect("/")
-    }
+router.get('/owner/:id', loggedIn, (req, res) => {
     Horse
     .find({owner: req.params.id})
     .exec()
     .then(horses => {
-        res.render('owner', { user : req.user, horses: horses });
+
+       let intro = 'no horses!'
+        if (horses.length>0){
+         intro = horses[horses.length-1].ownername+"'s horses"
+        }
+        res.render('owner', { user : req.user, horses: horses, intro: intro });
     })
     .catch(err => { console.error(err)});
     
 });
 
-router.get('/entry/:id', (req, res) => {
+router.get('/entry/:id', loggedIn, (req, res) => {
     console.log("vanilla", req.params.id)
    
     Entry
@@ -86,7 +85,7 @@ router.get('/entry/:id', (req, res) => {
 
 
 
-router.get('/horse/:id', (req, res) => {
+router.get('/horse/:id', loggedIn, (req, res) => {
     console.log("random horse", req.params)
     let horse = ''
     Horse
@@ -111,15 +110,17 @@ router.get('/horse/:id', (req, res) => {
 
 })
 
-router.post('/add-horse', (req, res) => {
+router.post('/add-horse', loggedIn, (req, res) => {
     upload(req,res,function(err) {
         console.log('upload horse', req.body, req.user, req.files, req.file)
            if(err) {
            throw err;
            return res.end("Error uploading file.");
        }
+       //let randomIpsum = randomIpsum()
+       let randomIpsum = "to be continued"
        console.log("Louie", req.file)
-       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, age: req.body.age, breed: req.body.breed, discipline: req.body.disclipine, images: [req.file.filename]})
+       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, ownername: req.user.username, age: req.body.age, breed: req.body.breed, discipline: req.body.disclipine, description: randomIpsum, images: [req.file.filename]})
         h.save(function(err) {
             if (err){
              throw (err);
@@ -130,7 +131,7 @@ router.post('/add-horse', (req, res) => {
     });
 })
 
-router.post('/horse/:id', (req, res) => {
+router.post('/horse/:id', loggedIn, (req, res) => {
     console.log(req.body)
     console.log('zebra')
     var o = new Entry({entry: req.body.entry, writtenBy: req.user._id, horse: req.params.id, stars: req.body.star, date: new Date()})
@@ -153,7 +154,9 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res, next) => {
     Account.register(new Account({ username : req.body.username }), req.body.password, (err, account) => {
         if (err) {
-          return res.render('register', { error : err.message });
+          
+          return res.render('index', { error : err.message });
+
       }
 
       passport.authenticate('local')(req, res, () => {
@@ -172,7 +175,9 @@ router.get('/login', (req, res) => {
     res.render('login', { user : req.user, error : req.flash('error')});
 });
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
+
+
+router.post('/login', passport.authenticate('local', { failureRedirect: '/', failureFlash: true }), (req, res, next) => {
     req.session.save((err) => {
         if (err) {
             return next(err);
@@ -180,8 +185,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
         res.redirect('/profile');
     });
 });
-
-router.delete('/entry/:id', (req, res) => {
+router.delete('/entry/:id', loggedIn, (req, res) => {
   console.log("kitty")
   //Entry.delete(req.params.id);
   Entry.findOne({'_id':req.params.id})
@@ -211,5 +215,21 @@ router.get('/ping', (req, res) => {
     res.status(200).send("pong!");
 });
 
+function loggedIn(req, res, next) {
+    if (req.user) {
+      console.log("loggedIn")
+        next();
+    } else {
+      console.log("logged out")
+        res.redirect('/login');
+    }
+}
 
+function randomIpsum(){
+  $.get("https://loripsum.net/api/plaintext/1", function(data, status){
+        console.log("Data: " + data + "\nStatus: " + status);
+        return data
+    });
+ 
+}
 module.exports = router;

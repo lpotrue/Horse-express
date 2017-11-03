@@ -8,6 +8,7 @@ const Horse = new Schema({
     breed: String,
     discipline: String,
     owner: String,
+    ownername: String,
     stars: String,
     images: Array
 });

@@ -1,19 +1,52 @@
 extends layout
 block content
+  link(rel='stylesheet', href='/stylesheets/index.css')
   .container
   
-   #background
+  #background
       .item
         h2 every stride of the way...
+  .container
 
+     form.register(role='form', action="/register",method="post", style='max-width: 300px;')
+       .error #{error} 
+       h3
+        | Create Your Account
+        .form-group
+          input.form-control(type='text', name="username", placeholder='Enter Username')
+        .form-group
+          input.form-control(type='password', name="password", placeholder='Password')
+         button.form-btn.sx.log-in(type='button') Log In
+         button.form-btn.dx(type='submit') Register
+       
+   .container 
+      form.signIn(role='form', action="/login", method="post", style='max-width: 300px;')
+       .error #{error} 
+       h3
+        | Welcome
+        br
+        | Back !
+        .form-group
+          input.form-control(type='text', name="username", placeholder='Enter Username')
+        .form-group
+          input.form-control(type='password', name="password", placeholder='Password')
+         button.form-btn.sx.back(type='button') Back
+         button.form-btn.dx(type='submit') Log In
 
     .explanation
-     h4 An easy way to track your rides  
-     h4 Horse Tracker gives you an easy to use platform to help you track the progess your horses, keep a well organized workout schedule and assess beneficial training techniques.
-     .register-button
-      a(href="/register") GET STARTED 
-  
-       
+      h4 Track the progess of your horses, keep a well organized workout schedule and assess beneficial training techniques.
+
+     
+
+
+
+
+
+    
+
+
+
+    
        
 
  

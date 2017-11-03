@@ -1,7 +1,12 @@
+*{
+  //border: 1px dashed black;
+}
+
 body {
   //font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  background: #f5f7f8;
 }
 
 a:hover {
@@ -20,14 +25,16 @@ p {
 .item {
   box-sizing: border-box;
   //font-size: 4.2rem;
-  line-height: 40%;
+  //line-height: 40%;
   //margin: 2.1rem 0 1.68rem 0;
   z-index: 2;
   position: absolute;
   //display: block;
-  font-size: 140%;
-  padding-left: 45%;
+  //font-size: 140%;
+  //padding-left: 45%;
   color: white;
+  bottom: 0;
+  right: 0;
 }
 
 
@@ -56,11 +63,11 @@ h2 {
   font-weight: lighter;
   border-top: 2px solid white;
   padding-top: 3%;
-  margin-top: 350px;
+  //margin-top: 350px;
   text-align: right;
 }
 @media only screen and (max-width: 700px) {
-h2 { margin-top: 250px;
+h2 { //margin-top: 250px;
     font-size: .75em;}
  }
 
@@ -74,18 +81,22 @@ color: white;
 }
 
 h4 {
-  padding-top: 4%;
+  color: #333;
+  font-family: 'Raleway', sans-serif;
   padding-left: 5%;
   padding-right: 5%;
-  font-size: 150%;
+  
 }
 
 h5 {
   font-family: 'Cinzel', serif;
   font-weight: lighter;
-  color: black;
+  color: white;
   margin: auto;
   font-size: 2.5em;
+}
+@media only screen and (max-width: 500px) {
+h5 {font-size: 1.5em;}
 }
 
 h6 {
@@ -98,29 +109,33 @@ h6 {
 .intro {
   font-family: 'Cinzel', serif;
   font-weight: lighter;
-  color: black;
+  color: grey;
   margin: auto;
-  font-size: 2.5em;
-  padding-top: 25%;
+  font-size: 1.5em;
+  
   align-content: center;
-  margin-left: 15%;
+  
 }
 
 .menu a:hover {
 	color: red;
 }
 
-img.logo{
+.logo a {
+  all: unset;
+}
+
+.logo img{
   display: block;
   float: left;
   z-index: 5;
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
 
-img.logo:hover {
+.logo img:hover {
   border-color: #9ecaed;
   box-shadow: 0 0 10px #9ecaed;
 }
@@ -169,6 +184,7 @@ img.logo:hover {
   display: inline-block;
   float: right;
   margin-left: 60%;
+  z-index: 100;
 }
 
 .logged-in{
@@ -177,9 +193,9 @@ img.logo:hover {
   text-align: center;
   box-sizing: border-box;
   width: 100%;
-  height: 100px;
+  height: 75px;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
-  background-color: rgba(0, 0, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   filter: alpha(opacity=80); 
   color: white;
   position: relative; 
@@ -187,22 +203,41 @@ img.logo:hover {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 500px) {
+.logged-in {
+  text-align: right;
+  padding-right: 3%;
+}
+ }
+
 .register-button {
  display: block;
   margin: auto;
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
   color: white;
-  background-color: gold;
+  float: left;
+  width: 50%;
+  text-align: center;
+  height: 150px;
+
+  /*background-color: gold;
   text-align: center;
   text-decoration: none;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
   border-radius: 5px;
   border: 2px solid #dadada;
   width: 175px;
-  height: 30px;
+  height: 30px;*/
 
 }
+
+.register-button a{
+  background-color: #999;
+  width: 150px;
+  display:  inline-block;
+  padding: 50px 0;
+ }
 
 .date {
   padding-top: 20%;
@@ -219,13 +254,12 @@ img.logo:hover {
   color: white;
   text-decoration: none;
   margin-top: 1%;
+  border-radius: 5px;
+ 
+  height: 20px;
 }
 
-.register-button:hover { 
-    outline: none;
-    border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
-}
+
 
 input.form-control{
   box-sizing: border-box;
@@ -235,6 +269,7 @@ input.form-control{
 }
 
 .btn-primary, .btn-default{
+   cursor: pointer;
    border-radius: 5px;
    width: 30%;
    height: 30px;
@@ -267,29 +302,19 @@ input.form-control:focus {
  
 }
 
-li {
- list-style-image: url('sqpurple.gif');
-}
+
 
 .profile-btn {
  align-items: center;
 }
 
-.explanation{
-  border: 2px grey;
-  position: fixed;
+.explanation {
   box-sizing: border-box;
-  width: 100%;
-  height: 50%;
   margin: 0;
+  bottom: 0;
   font-weight: lighter;
-  background:rgba(0, 0, 0, 0.8);
-  font-family: 'Raleway', sans-serif;
-  //background-color: rgba(0, 0, 255, 0.7);
-  //background: #4D4845;
-  color: white;
-  padding-bottom: 5%;
-  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+  font-family: 'Cinzel', serif;
+  
 }
 
 .caramia {
@@ -305,6 +330,7 @@ li {
 
 .container{
 	margin: auto;
+  //height: 100vh;
 }
 
 .form-group {
@@ -336,119 +362,18 @@ li {
 }
 
 #background {
-  background-image: url("https://image.ibb.co/mSRvdw/IMG_0882.jpg");
+  background-image: url("https://image.ibb.co/jyLgfm/caramiaarena.jpg");
+  //background-image: url("https://image.ibb.co/mSRvdw/IMG_0882.jpg");
   //background-image: url("../uploads/109f2c01fe647de0f139376842b258ad");
   position: relative;
-  width: 100%;
-  height: 400px;
+  //width: 100%;
+  height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  //background-position: 100%;
   z-index: 1;
 }
-@media only screen and (max-width: 500px) {
- #background{ height: 300px}
-}
 
-div.stars {
-  width: 270px;
-  display: inline-block;
-}
 
-input.star { display: none; }
 
-label.star {
-  float: right;
-  padding: 10px;
-  font-size: 20px;
-  color: #444;
-  transition: all .2s;
-}
 
-input.star:checked ~ label.star:before {
-  content: '\f005';
-  color: #FD4;
-  transition: all .25s;
-}
-
-input.star-5:checked ~ label.star:before {
-  color: #FE7;
-  text-shadow: 0 0 20px #952;
-}
-
-input.star-1:checked ~ label.star:before { color: #F62; }
-
-label.star:hover { transform: rotate(-15deg) scale(1.3); }
-
-label.star:before {
-  content: '\f006';
-  font-family: FontAwesome;
-}
-
-.mySlides {display:none}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Caption text */
-.text {
-  z-index: 100;
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}

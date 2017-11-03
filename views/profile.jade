@@ -1,45 +1,49 @@
 extends layout
 
 block content
-  link(rel='stylesheet', href='/stylesheets/float.css')
-  link(rel='stylesheet', href='/stylesheets/profile.css')
+  link(rel='stylesheet', href='/stylesheets/cards2.css')
+  link(rel='stylesheet', href='/stylesheets/slides.css')
+
   .container
    if(horses)
     .slideshow-container
     each horse in horses
        .mySlides.fade
-        img(src="/uploads/#{horse.images[0]}", class="horse-pics", id="background")
+        img(src="/uploads/#{horse.images[0]}", class="slide-image")
         .text #{horse.horsename}
-    div(style='text-align:center')
+          div(style='text-align:center')
   each horse in horses
       span.dot
-
-  .band
-  
+  .col-12
+   .cards
     each horse in horses
-       li.my-horses.card
-        .card-title
-           #{horse.horsename}
-        .card-image
-          img(src="/uploads/#{horse.images[0]}")
-          |               
-          span.card-title #{horse.horsename}
-          |             
-        .card-content
+     .card
+      .card-image
+       img(src="/uploads/#{horse.images[0]}", class="card-image")
+      .card-title
+       #{horse.horsename}
+  
+       
+       h2
+        | #{horse.horsename}
+     
+       .card-content
           p
-             | Born in: #{horse.age}
-            | Breed: #{horse.breed}
-
-        |          
-        .card-action
-           a(href="/horse/"+horse._id) #{horse.horsename}'s Profile
-      if (!user)
-      a(href="/login") Login
-      br
-      a(href="/register") Register
+            h4 Born:
+             
+              span #{horse.age}
+             
+            h4 Breed:
+             
+              span #{horse.breed}      
+        a.btn(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
+  if (!user)
+    a(href="/login") Login
+    br
+    a(href="/register") Register
   if (user)
   .add
-      h6 Add a Horse 
+    h6 Add a Horse 
       form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
        .form-group
            input.form-control(type='text', name="horsename", placeholder='Enter Horsename')

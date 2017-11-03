@@ -1,10 +1,4 @@
 
-
-img {
-  width: 200px;
-  height: 200px;
-}
-
 html {
   background: #f5f7f8;
   font-family: 'Roboto', sans-serif;
@@ -29,10 +23,10 @@ html {
   .band {
     grid-template-columns: 1fr 1fr;
   }  
-  .item-1 {
+  .band {
   grid-column: 1/ span 2;
   }
-  .item-1 h1 {
+  .band h1 {
     font-size: 30px;
   }
 }
@@ -43,7 +37,16 @@ html {
   }
 }
 
-.add {
+.form-control-horse {
+	width: 30%;
+	
+}
+
+.form-group {
+	padding-top: 5%;
+}
+
+.add, li.my-horses.card {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
@@ -57,15 +60,15 @@ html {
 }
 
 @media only screen and (min-width: 500px) {
-  .add {
+  .add, li.my-horses.card{
     grid-template-columns: 1fr 1fr;
   }  
  @media only screen and (min-width: 850px) {
-  .add {
+  .add, li.my-horses.card {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-/* card */
+
 
 .card {
   //min-height: 100%;
@@ -78,6 +81,7 @@ html {
   position: relative;
   top: 0;
   transition: all .1s ease-in;
+  margin: auto;
 }
 
 .card:hover {
@@ -85,21 +89,26 @@ html {
   box-shadow: 0 4px 5px rgba(0,0,0,0.2);
 }
 
+div.card-title {
+	margin: auto;
+}
+
 .card-content {
   padding: 20px;
   justify-content: space-between;
   flex-direction: column;
-  
+  margin: auto;
 }
-.card-image {
- 
+img {
+  width: 100%;
+  height: 250px;
   background-size: cover;
   background-position: center center;
 }
 
-.card p { 
-   /* make p grow to fill available space*/
-  
+
+li.my-horses.card, li.owner.card {
+	align-content: center;
 }
 
 /* typography */
@@ -117,3 +126,4 @@ h1 {
   letter-spacing: .05em;
   margin: 2em 0 0 0;
 }
+

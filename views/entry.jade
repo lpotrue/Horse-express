@@ -1,23 +1,28 @@
 extends layout
 
 block content
+  link(rel='stylesheet', href='/stylesheets/horse.css')
+  link(rel='stylesheet', href='/stylesheets/stars.css')
   link(rel='stylesheet', href='/stylesheets/entry.css')
+  .container
+    .logged-in
+    .date  Entry on #{entry.date}
+    .entry #{entry.entry}
   
-  .date  Entry on #{entry.date}
-  .entry #{entry.entry}
-  .cont
-   .stars
-   
-      input#star-5-2.star.star-5(type='radio', name='star', value='5', checked=(entry.stars===5 ? "checked" : undefined))
-      label.star.star-5(for='star-5-2')
-      input#star-4-2.star.star-4(type='radio', name='star', value='4', checked=(entry.stars===4 ? "checked" : undefined))
-      label.star.star-4(for='star-4-2')
-      input#star-3-2.star.star-3(type='radio', name='star', value='3', checked=(entry.stars===3 ? "checked" : undefined))
-      label.star.star-3(for='star-3-2')
-      input#star-2-2.star.star-2(type='radio', name='star', value='2', checked=(entry.stars===2 ? "checked" : undefined))
-      label.star.star-2(for='star-2-2')
-      input#star-1-2.star.star-1(type='radio', name='star', value='1', checked=(entry.stars===1 ? "checked" : undefined))
-      label.star.star-1(for='star-1-2')
+   .cont
+      
+      .stars
+        input#star-5-2.star.star-5(type='radio', name='star', value='5', checked=(entry.stars===5 ? "checked" : undefined))
+        label.star.star-5(for='star-5-2')
+        input#star-4-2.star.star-4(type='radio', name='star', value='4', checked=(entry.stars===4 ? "checked" : undefined))
+        label.star.star-4(for='star-4-2')
+        input#star-3-2.star.star-3(type='radio', name='star', value='3', checked=(entry.stars===3 ? "checked" : undefined))
+        label.star.star-3(for='star-3-2')
+        input#star-2-2.star.star-2(type='radio', name='star', value='2', checked=(entry.stars===2 ? "checked" : undefined))
+        label.star.star-2(for='star-2-2')
+        input#star-1-2.star.star-1(type='radio', name='star', value='1', checked=(entry.stars===1 ? "checked" : undefined))
+        label.star.star-1(for='star-1-2')
+
 
    button.btn.btn-default(type='delete' id='delete') Delete
 

@@ -1,0 +1,163 @@
+.img-circle {
+	box-sizing: border-box;
+    border-radius: 50%;
+    height: 300px;
+    margin-left: 3%;
+    margin-top: 3%;
+   align-content: right;
+}
+@media only screen and (max-width: 600px) {
+	.img-circle {
+		height: 150px;
+		margin: 0;
+		margin-top: 2%;
+		width: 250px;
+	}
+}
+
+li {
+	display: block;
+	margin: auto;
+}
+
+a {
+	color: grey;
+	text-decoration: none;
+	margin-left: 15%;
+	margin-bottom: 5%;
+}
+@media only screen and (max-width: 700px){
+	a {
+		font-size: .75em;
+	}
+}
+
+a:hover {
+	color: #9ecaed;
+}
+
+.horse-info {
+	padding-top: 102px;
+	box-sizing: border-box;
+	line-height: 100%;
+	margin-left: 5%;
+	margin-right: 5%;
+	
+    border-bottom: 2px solid white;
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.info {
+	padding-left: 2%;
+	display: inline-block;
+	box-sizing: border-box;
+	width: 200px;
+	height: 200px;
+	
+}
+@media only screen and (max-width: 700px) {
+	.info { margin-right: 0;
+
+}
+}
+.btn {
+  margin: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
+  color: white;
+  display: grid;
+  width: 100px;
+  height: 30px;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+ transition: all 0.1s 0s ease-out;
+}
+
+.btn:hover {
+  background: lighten(@teal,2.5);
+  box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
+  transform: translateY(-2px);
+  transition: all 0.25s 0s ease-out;
+}
+
+ 
+.btn:active {
+  background: darken(@teal,2.5);
+  box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
+  transform: translate3d(0,1px,0);
+  transition: all 0.025s 0s ease-out;
+}
+
+.entry-area{
+	border-top: 2px solid white;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 3%;
+}
+
+.form-control{
+	width: 70%;
+	margin: auto;
+	margin-top: 3%;
+	box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    margin-bottom: 1%;
+}
+
+.form-group {
+	margin-top: 3%;
+	
+	padding-bottom: 0;
+}
+
+
+h6{ 
+	justify-content: center;
+	margin: auto;
+	text-align: left;
+	
+}
+@media only screen and (max-width: 700px){
+	h6{
+		font-size: .75em;
+	}
+}
+
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-weight: lighter;
+  
+  text-align: left;
+  font-size: 1.5em;
+}  
+/*@media only screen and (max-width: 800px) {
+h2 { 
+    font-size: .75em;}
+ }*/
+
+
+
+h3{
+ color: black;
+ justify-content: center;
+ margin: auto;
+ text-align: center;
+ padding-bottom: 3%;
+ padding-top: 1%;
+}
+

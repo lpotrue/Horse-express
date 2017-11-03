@@ -10,15 +10,8 @@ html
     link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
 
   body
-    if (error && error.length > 0)
-      br
-      h4.error-msg= error
-      br
-    .top
-      if (!user)
-       .login-button
-         a(href="/login") Login
-      .logo 
+   
+    .logo 
       a(href="/")
         img.logo(src="https://image.ibb.co/fX03Ow/IMG_3420.jpg.jpg" alt="Logo")
       if (user)
@@ -27,12 +20,7 @@ html
         a(href="/profile") Profile
         a(href="/find") Find Horse
         a(href="/logout") Logout
-        //.logo 
-          //a(href="/")
-          // img.logo(src="https://image.ibb.co/fX03Ow/IMG_3420.jpg.jpg" alt="Logo")
-      //#background
-      //.item
-       // h2 every stride of the way...
+       
     block content
 
 

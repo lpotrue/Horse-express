@@ -1,17 +1,54 @@
 extends layout
 
 block content
+  link(rel='stylesheet', href='/stylesheets/cards2.css')
   .container
-    h3 Owner
+    h3 #{intro}
     if (!user)
       a(href="/login") Login
       br
       a(href="/register") Register
-    if (!user)
-      h6 #{owner.username} hasn't added any horses
-    if (user)
-      each horse in horses
-          li 
-            a(href="/horse/"+horse._id) #{horse.horsename} 
-
+    if (!horses)
+     h3 no horses
+    if (user)    
+   .col-12
+   .cards
+    each horse in horses
+     .card
+      .card-image
+       img(src="/uploads/#{horse.images[0]}", class="card-image")
+      .card-title
+       #{horse.horsename}
+        h2
+         | #{horse.horsename}
+     
+        .card-content
+           p
+             h4 Born:
+             
+               span #{horse.age}
+             
+             h4 Breed:
+             
+               span #{horse.breed}      
+         a.btn(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
+    if(!horse in horses)
+      .col-12
+      .cards
+       .card
+        .card-image
+        
+        .card-title
       
+        h2
+        
+     
+        .card-content
+           p
+             h4 Born:
+             
+              
+             
+             h4 Breed:
+             
+                    

@@ -1,9 +1,23 @@
 extends layout
 
 block content
+  link(rel='stylesheet', href='/stylesheets/cards2.css')
+  link(rel='stylesheet', href='/stylesheets/find.css')
   .container
-    h1 Find Horses by Owner 
+
+    h6 Find Horses by Owner 
+    col-12
+   .cards
     each owner in owners
-         li 
-           a(href="/owner/"+owner._id) #{owner.username} 
-           
+     .card
+      .card-image
+       
+      .card-title
+       a(href="/owner/"+owner._id) #{owner.username} 
+       
+  
+
+
+        
+                    
+         

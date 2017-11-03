@@ -16,6 +16,42 @@ $("#delete").click(function(){
 
 });
 
+$("button").click(function(){
+    if($(this).hasClass("confirm")){
+        $(this).addClass("done");
+        $("span").text("Deleted");
+    } else {
+        $(this).addClass("confirm");
+        $("span").text("Are you sure?");
+    }
+});
+
+// Reset
+$("button").on('mouseout', function(){
+    if($(this).hasClass("confirm") || $(this).hasClass("done")){
+        setTimeout(function(){
+            $("button").removeClass("confirm").removeClass("done");
+            $("span").text("Delete");
+        }, 3000);
+    }
+});
+
+
+$(".log-in").click(function(){
+    $(".signIn").addClass("active-dx");
+    $(".register").addClass("inactive-sx");
+    $(".register").removeClass("active-sx");
+    $(".signIn").removeClass("inactive-dx");
+});
+
+$(".back").click(function(){
+    $(".register").addClass("active-sx");
+    $(".signIn").addClass("inactive-dx");
+    $(".signIn").removeClass("active-dx");
+    $(".register").removeClass("inactive-sx");
+});
+
+
   
   var slideIndex = 0;
 
@@ -27,7 +63,7 @@ function showSlides() {
     if(dots.length < 1 || slides.length < 1){
       //return;
     }
-    console.log(slides)
+    
     for (i = 0; i < slides.length; i++) {
        slides[i].style.display = "none";  
     }
@@ -36,12 +72,14 @@ function showSlides() {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
+    if (slides[slideIndex-1]){
 
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
+
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 3000);
+    } // Change image every 3 seconds
 }
-
 
 function readFile() {
   
