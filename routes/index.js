@@ -241,7 +241,7 @@ function randomIpsum(){
  * Upon request, return JSON containing the temporarily-signed S3 request and
  * the anticipated URL of the image.
  */
-/*router.get('/sign-s3', (req, res) => {
+router.get('/sign-s3', (req, res) => {
   console.log("sign-s3")
   const s3 = new aws.S3();
   const fileName = req.query['file-name'];
@@ -266,5 +266,5 @@ function randomIpsum(){
     res.write(JSON.stringify(returnData));
     res.end();
   });
-});*/
+});
 module.exports = router;
