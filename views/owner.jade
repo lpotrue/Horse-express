@@ -4,6 +4,7 @@ block content
   link(rel='stylesheet', href='/stylesheets/cards2.css')
   .container
     h3 #{intro}
+     
     if (!user)
       a(href="/login") Login
       br
@@ -32,23 +33,6 @@ block content
              
                span #{horse.breed}      
          a.btn(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
-    if(!horse in horses)
-      .col-12
-      .cards
-       .card
-        .card-image
-        
-        .card-title
-      
-        h2
-        
-     
-        .card-content
-           p
-             h4 Born:
-             
-              
-             
-             h4 Breed:
+    
              
                     

@@ -13,14 +13,15 @@ var flash = require('connect-flash');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 //const fileUpload = require('express-fileupload');
-
+const aws = require('aws-sdk');
 var app = express();
 //app.use(fileUpload());
 
 
 //app.use('/fileuploads', express.static(path.join(__dirname, '/fileuploads')));
-
-
+aws.config.region = 'us-west-1';
+const S3_BUCKET = process.env.S3_BUCKET;
+  console.log("S3_BUCKET", S3_BUCKET)
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -51,8 +52,8 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
-//mongoose.connect('mongodb://localhost/horses');
-mongoose.connect("mongodb://horses:horses@ds245615.mlab.com:45615/horses");
+mongoose.connect('mongodb://localhost/horses');
+//mongoose.connect("mongodb://horses:horses@ds245615.mlab.com:45615/horses");
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

@@ -47,6 +47,7 @@ h3 {
   padding: 0;
   text-align: center;
 }
+
 .btn {
   background: @teal;
   border-radius: 4px;
