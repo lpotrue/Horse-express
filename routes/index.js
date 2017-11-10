@@ -13,6 +13,7 @@ const aws = require('aws-sdk');
 aws.config.region = 'us-west-1';
 const S3_BUCKET = process.env.S3_BUCKET;
   console.log("S3_BUCKET", S3_BUCKET)
+
 /*
 var express = require('express');
 var fs = require('fs'); // file system, to save files
