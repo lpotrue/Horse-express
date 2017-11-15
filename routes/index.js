@@ -206,7 +206,7 @@ router.delete('/entry/:id', loggedIn, (req, res) => {
   //res.status(204).end();
 });
 
-router.get('/logout', (req, res, next) => {
+router.get('/logout', loggedIn, (req, res, next) => {
     req.logout();
     req.session.save((err) => {
         if (err) {
@@ -226,7 +226,7 @@ function loggedIn(req, res, next) {
         next();
     } else {
       console.log("logged out")
-        res.redirect('/login');
+        res.redirect('/');
     }
 }
 
