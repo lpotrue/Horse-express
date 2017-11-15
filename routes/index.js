@@ -12,6 +12,7 @@ const router = express.Router();
 const aws = require('aws-sdk');
 aws.config.region = 'us-west-1';
 const S3_BUCKET = process.env.S3_BUCKET;
+  console.log("fresh")
   console.log("S3_BUCKET", S3_BUCKET)
 
 /*
