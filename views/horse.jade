@@ -7,7 +7,7 @@ block content
 
    .horse-info
       each image in horse.images
-          img(src="/uploads/#{image}", class="img-circle", id="img-circle")
+          img(src="#{url}", class="img-circle", id="img-circle")
        .info
         h2 #{horse.horsename}
         h6 Born in: #{horse.age}

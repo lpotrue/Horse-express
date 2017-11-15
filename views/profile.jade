@@ -9,7 +9,7 @@ block content
     .slideshow-container
     each horse in horses
        .mySlides.fade
-        img(src="/uploads/#{horse.images[0]}", class="slide-image")
+        img(src="#{horse.url[0]}", class="slide-image")
         .text #{horse.horsename}
           div(style='text-align:center')
   each horse in horses
@@ -19,7 +19,7 @@ block content
     each horse in horses
      .card
       .card-image
-       img(src="/uploads/#{horse.images[0]}", class="card-image")
+       img(src="#{horse.url[0]}", class="card-image")
       .card-title
        #{horse.horsename}
   
@@ -58,7 +58,7 @@ block content
            //p#b64
            //img#img(height='150')
            input#file-input(type='file', name='pic')
-           img#preview
+           img#preview(height='150')
        
          button.btn.btn-default(type='submit') Submit
         
