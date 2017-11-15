@@ -125,7 +125,7 @@ router.post('/add-horse', loggedIn, (req, res) => {
        //let randomIpsum = randomIpsum()
        let randomIpsum = "to be continued"
        console.log("Louie", req.file)
-       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, ownername: req.user.username, age: req.body.age, breed: req.body.breed, discipline: req.body.disclipine, description: randomIpsum, images: [req.file.filename], url : url})
+       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, ownername: req.user.username, age: req.body.age, breed: req.body.breed, discipline: req.body.disclipine, description: randomIpsum, images: [req.file.filename], url: [url]})
         h.save(function(err) {
             if (err){
              throw (err);

@@ -10,7 +10,8 @@ const Horse = new Schema({
     owner: String,
     ownername: String,
     stars: String,
-    images: Array
+    images: Array,
+    url: Array
 });
 
 //Horse.plugin(passportLocalMongoose);
