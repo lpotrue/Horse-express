@@ -13,7 +13,7 @@ const aws = require('aws-sdk');
 aws.config.region = 'us-west-1';
 const S3_BUCKET = process.env.S3_BUCKET;
   console.log("fresh")
-  console.log("S3_BUCKET", S3_BUCKET)
+  console.log("S3_BUCKET", S3_BUCKET) 
 
 /*
 var express = require('express');
@@ -114,10 +114,10 @@ router.get('/horse/:id', loggedIn, (req, res) => {
     .catch(err => { console.error(err)});
 
 })
-
+let url =''
 router.post('/add-horse', loggedIn, (req, res) => {
     upload(req,res,function(err) {
-        console.log('upload horse', req.body, req.user, req.files, req.file)
+        console.log('upload horse', url, req.body, req.user, req.files, req.file)
            if(err) {
            throw err;
            return res.end("Error uploading file.");
@@ -125,7 +125,7 @@ router.post('/add-horse', loggedIn, (req, res) => {
        //let randomIpsum = randomIpsum()
        let randomIpsum = "to be continued"
        console.log("Louie", req.file)
-       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, ownername: req.user.username, age: req.body.age, breed: req.body.breed, discipline: req.body.disclipine, description: randomIpsum, images: [req.file.filename]})
+       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, ownername: req.user.username, age: req.body.age, breed: req.body.breed, discipline: req.body.disclipine, description: randomIpsum, images: [req.file.filename], url : url})
         h.save(function(err) {
             if (err){
              throw (err);
@@ -264,6 +264,7 @@ router.get('/sign-s3', (req, res) => {
       signedRequest: data,
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     };
+    url = `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     res.write(JSON.stringify(returnData));
     res.end();
   });
