@@ -6,7 +6,7 @@ block content
   .container
 
    .horse-info
-      each image in horse.images
+      each url in horse.url
           img(src="#{url}", class="img-circle", id="img-circle")
        .info
         h2 #{horse.horsename}
