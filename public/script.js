@@ -37,18 +37,17 @@ $("button").on('mouseout', function(){
 });
 
 
+$(".register").click(function(){
+    $(".register").addClass("active-sx");
+    $(".signIn").addClass("inactive-dx");
+    $(".signIn").removeClass("active-dx");
+    $(".register").removeClass("inactive-sx");
+});
 $(".log-in").click(function(){
     $(".signIn").addClass("active-dx");
     $(".register").addClass("inactive-sx");
     $(".register").removeClass("active-sx");
     $(".signIn").removeClass("inactive-dx");
-});
-
-$(".back").click(function(){
-    $(".register").addClass("active-sx");
-    $(".signIn").addClass("inactive-dx");
-    $(".signIn").removeClass("active-dx");
-    $(".register").removeClass("inactive-sx");
 });
 
 
