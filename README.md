@@ -1,3 +1,5 @@
-## User Authentication With Passport and Express 4
+# My great app
 
-View the blog post here: http://mherman.org/blog/2015/01/31/local-authentication-with-passport-and-express-4
+  This is My Great App. It does great things. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+  ![A screenshot of my great app](mygreatapp-screenshot.png)
