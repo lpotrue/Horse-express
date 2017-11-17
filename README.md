@@ -1,3 +1,10 @@
-## User Authentication With Passport and Express 4
+[Horse Express App](https://horse-express.herokuapp.com/)
 
-View the blog post here: http://mherman.org/blog/2015/01/31/local-authentication-with-passport-and-express-4
+
+ TRACK THE PROGESS OF YOUR HORSES, KEEP A WELL ORGANIZED WORKOUT SCHEDULE AND ASSESS BENEFICIAL TRAINING TECHNIQUES. 
+
+  ![A screenshot of my great app](https://s3-us-west-1.amazonaws.com/horsebucket/Screen+Shot+2017-11-17+at+12.17.21+PM.png)
+  # Every Stride of the way
+  ![A screenshot of my great app](https://s3-us-west-1.amazonaws.com/horsebucket/Screen+Shot+2017-11-17+at+12.22.41+PM.png)
+
+[Horse Express App](https://horse-express.herokuapp.com/)
