@@ -46,18 +46,18 @@ block content
     h6 Add a Horse 
       form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
        .form-group
-           input.form-control(type='text', name="horsename", placeholder='Enter Horsename')
+           input.form-control(type='text', name="horsename", placeholder='Enter Horsename', required='')
            //textarea(type='text', name="description", placeholder='Make an Description')
        .form-group
-           input.form-control(type='year', name="age", placeholder='Year of Birth')
+           input.form-control(type='year', name="age", placeholder='Year of Birth', required='')
        .form-group
-           input.form-control(type='text', name="breed", placeholder='Enter Breed')
+           input.form-control(type='text', name="breed", placeholder='Enter Breed', required='')
        .form-group
-           input.form-control(type='text', name="discipline", placeholder='Enter Discipline')
+           input.form-control(type='text', name="discipline", placeholder='Enter Discipline', required='')
            //input#inp(type='file', name='pic')
            //p#b64
            //img#img(height='150')
-           input#file-input(type='file', name='pic')
+           input#file-input(type='file', name='pic', required='')
            img#preview(height='150')
        
          button.btn.btn-default(type='submit') Submit
