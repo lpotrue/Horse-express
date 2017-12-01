@@ -1,4 +1,4 @@
-.btnss {
+.btn-default, .btn-primary, .btnss  {
   display: inline-block;
   background: transparent;
   text-transform: uppercase;
@@ -21,7 +21,23 @@
 
 
 
+.btn.primary:hover {
+  color: #fff;
+  border: 1px solid rgba(223,190,106,0);
+  color: $white;
+  background-position: 99% 50%;
+  cursor: pointer;
+}
+
 .btnss:hover {
+  color: #fff;
+  border: 1px solid rgba(223,190,106,0);
+  color: $white;
+  background-position: 99% 50%;
+  cursor: pointer;
+}
+
+.btn.default:hover {
   color: #fff;
   border: 1px solid rgba(223,190,106,0);
   color: $white;

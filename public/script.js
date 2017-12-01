@@ -15,7 +15,7 @@ $("#delete").click(function(){
 });
 
 });
-
+/*
 $("button").click(function(){
     if($(this).hasClass("confirm")){
         $(this).addClass("done");
@@ -35,9 +35,7 @@ $("button").on('mouseout', function(){
         }, 3000);
     }
 });
-
-
-
+*/
 
 $(".back").click(function(){
     $(".register").addClass("active-sx");

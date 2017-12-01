@@ -116,8 +116,8 @@ h6 {
   float: left;
   z-index: 5;
   position: absolute;
-  width: 82px;
-  height: 82px;
+  width: 100px;
+  height: 100px;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
 

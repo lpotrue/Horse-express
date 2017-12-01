@@ -38,18 +38,18 @@ block content
             h4 Breed:
              
               span #{horse.breed}  
-             
-        a.btnss(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
+
+        a.btn.btnss(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
   if (!user)
     a(href="/login") Login
     br
     a(href="/register") Register
   if (user)
-  
-      h6 Add a Horse 
+  .add
+    h6 Add a Horse 
       form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
        .form-group
-           input.form-control(type='text', name="horsename", placeholder='Enter Horsename', required='', oninvalid="alert('You must fill out the form!');")
+           input.form-control(type='text', name="horsename", placeholder='Enter Horsename', required='')
            //textarea(type='text', name="description", placeholder='Make an Description')
        .form-group
            input.form-control(type='year', name="age", placeholder='Year of Birth', required='')
@@ -63,7 +63,7 @@ block content
            input#file-input(type='file', name='pic', required='')
            img#preview(height='150')
        
-           a.btnss(type='submit') Submit
+         button.btn.btnss(type='submit') Submit
         
-           a(href='/')
-           a.btnss(type="button") Cancel
+         a(href='/')
+         button.btn.btnss(type="button") Cancel
