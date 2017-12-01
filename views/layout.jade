@@ -5,6 +5,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     <!--link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet', media='screen')-->
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/button2.css')
     link(href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet")
     link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
@@ -16,10 +17,10 @@ html
         img.logo(src="https://image.ibb.co/fX03Ow/IMG_3420.jpg.jpg" alt="Logo")
       if (user)
        .logged-in
-        h5 Hello, #{user.username}!
-        a(href="/profile") Profile
-        a(href="/find") Find Horse
-        a(href="/logout") Logout
+         h5 Hello, #{user.username}!
+         a.navigator(href="/profile") Profile
+         a.navigator(href="/find") Find Horse
+         a.navigator(href="/logout") Logout
        
     block content
 

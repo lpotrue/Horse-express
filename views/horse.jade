@@ -3,6 +3,7 @@ extends layout
 block content
   link(rel='stylesheet', href='/stylesheets/horse.css')
   link(rel='stylesheet', href='/stylesheets/stars.css')
+  link(rel='stylesheet', href='/stylesheets/button.css')
   .container
 
    .horse-info
@@ -12,7 +13,8 @@ block content
         h2 #{horse.horsename}
         h6 Born in: #{horse.age}
         h6 Breed: #{horse.breed}
-        h6 Owned by: #{horse.owners}
+        h6 Owned by: #{horse.username} 
+        h6 Discipline: #{horse.discipline}
         
       
    .band
@@ -21,7 +23,7 @@ block content
     each entry in entries
          
           li
-            a(href="/entry/"+entry._id)  #{entry.date}
+            a.btnss(href="/entry/"+entry._id)  #{entry.date}
         .entry-area
 
         form(role='form', action="", method="post", style='max-width: 300px;')
@@ -44,7 +46,7 @@ block content
                       input#star-1-2.star.star-1(type='radio', name='star', value='1')
                       label.star.star-1(for='star-1-2')
 
-            button.btn.btn-default(type='submit') Submit
-            &nbsp;
-            a(href='/')
-              button.btn.btn-primary(type="button") Cancel
+              a.btnss(type='submit') Submit
+              &nbsp;
+              a(href='/')
+              a.btnss(type="button") Cancel

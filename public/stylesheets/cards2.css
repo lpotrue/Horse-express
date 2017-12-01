@@ -27,24 +27,41 @@ body {
 
 
 h4 span {
+  padding: 1%;
   color: grey;
   font-family: 'Raleway', sans-serif;
   position: absolute;
   top: 0;
-  right: 1rem;
+  right: .1em;
+}
+
+.intro {
+  padding: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: white; 
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.725rem;
+  letter-spacing: 0.3em;
 }
 
 h4 {
   position: relative;
   font-weight: bold;
   color: black; 
-  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.725rem;
+  letter-spacing: 0.3em;
 }
 
 h3 {
   color: black;
   margin: auto;
-  padding: 0;
+  padding-top: 5%;
   text-align: center;
 }
 
@@ -296,5 +313,89 @@ h3 {
     transition: all 0.3s 0.2s ease-out;
   }
 
+.btnss {
+  color: #fff;
+  display: inline-block;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  border-radius: 0;
+  padding: 18px 80px 20px;
+  transition: all 0.7s ease-out;
+  background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+  background-position: 100% 0%;
+  background-size: 300% 300%;
+  text-decoration: none;
+  margin: 0.625rem;
+  border: none;
+  border: 1px solid rgba(223,190,106,0.3);
+}
+
+
+
+.btnss:hover {
+  color: rgba(223,190,106,0.7);
+  border: 1px solid rgba(223,190,106,0);
+  color: $white;
+  background-position: 99% 50%;
+  cursor: pointer;
+}
+
+body {
+  background: #231f20;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arials, sans;
+}
+
+
+.btnsss {
+  box-sizing: border-box;
+  width: 200px;
+  height: 60px;
+}
+
+.btn:hover {
+  color: #fff;
+  border: 1px solid rgba(223,190,106,0);
+  color: $white;
+  background-position: 99% 50%;
+}
+
+body {
+  background: #231f20;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arials, sans;
+}
+
+.intro {
+ text-transform: uppercase;
+ font-weight: 500;
+ font-style: normal;
+ font-size: 0.625rem;
+ letter-spacing: 0.3em;
+ color: white;
+ justify-content: center;
+ margin: auto;
+ text-align: center;
+ padding-bottom: 3%;
+ padding-top: 1%;
+}
+
+
+
+
+/*article {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}*/
 
 

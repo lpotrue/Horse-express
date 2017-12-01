@@ -2,15 +2,16 @@ extends layout
 
 block content
   link(rel='stylesheet', href='/stylesheets/cards2.css')
+  link(rel='stylesheet', href='/stylesheets/button.css')
   .container
-    h3 #{intro}
+    .intro #{intro}
      
     if (!user)
       a(href="/login") Login
       br
       a(href="/register") Register
     if (!horses)
-     h3 no horses
+     h3 #{owner.username} hasn't added any horses
     if (user)    
    .col-12
    .cards
@@ -32,7 +33,7 @@ block content
              h4 Breed:
              
                span #{horse.breed}      
-         a.btn(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
+         a.btnss(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
     
              
                     

@@ -3,6 +3,8 @@ extends layout
 block content
   link(rel='stylesheet', href='/stylesheets/cards2.css')
   link(rel='stylesheet', href='/stylesheets/slides.css')
+  link(rel='stylesheet', href='/stylesheets/button.css')
+
 
   .container
    if(horses)
@@ -35,18 +37,19 @@ block content
              
             h4 Breed:
              
-              span #{horse.breed}      
-        a.btn(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
+              span #{horse.breed}  
+             
+        a.btnss(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
   if (!user)
     a(href="/login") Login
     br
     a(href="/register") Register
   if (user)
-  .add
-    h6 Add a Horse 
+  
+      h6 Add a Horse 
       form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
        .form-group
-           input.form-control(type='text', name="horsename", placeholder='Enter Horsename', required='')
+           input.form-control(type='text', name="horsename", placeholder='Enter Horsename', required='', oninvalid="alert('You must fill out the form!');")
            //textarea(type='text', name="description", placeholder='Make an Description')
        .form-group
            input.form-control(type='year', name="age", placeholder='Year of Birth', required='')
@@ -60,7 +63,7 @@ block content
            input#file-input(type='file', name='pic', required='')
            img#preview(height='150')
        
-         button.btn.btn-default(type='submit') Submit
+           a.btnss(type='submit') Submit
         
-         a(href='/')
-         button.btn.btn-primary(type="button") Cancel
+           a(href='/')
+           a.btnss(type="button") Cancel

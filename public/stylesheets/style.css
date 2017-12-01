@@ -10,31 +10,7 @@ body {
 }
 
 a:hover {
-  color: #9ecaed;
-}
-
-
-p {
-  
-  //padding-right: 5%;
-  //padding-left: 5%;
-  //font-size: 1.5em;
-  //position: fixed;
-}
-
-.item {
-  box-sizing: border-box;
-  //font-size: 4.2rem;
-  //line-height: 40%;
-  //margin: 2.1rem 0 1.68rem 0;
-  z-index: 2;
-  position: absolute;
-  //display: block;
-  //font-size: 140%;
-  //padding-left: 45%;
-  color: white;
-  bottom: 0;
-  right: 0;
+  color: rgba(223,190,106,0.7);
 }
 
 
@@ -61,14 +37,20 @@ h1 {
 h2 {
   font-family: 'Cinzel', serif;
   font-weight: lighter;
-  border-top: 2px solid white;
-  padding-top: 3%;
-  //margin-top: 350px;
-  text-align: right;
+  //position: absolute;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  bottom: 0;
 }
 @media only screen and (max-width: 700px) {
-h2 { //margin-top: 250px;
-    font-size: .75em;}
+h2 { letter-spacing: normal;
+    font-size: 1rem;}
  }
 
 h3 {
@@ -85,7 +67,10 @@ h4 {
   font-family: 'Raleway', sans-serif;
   padding-left: 5%;
   padding-right: 5%;
-  
+  text-transform: uppercase;
+  font-weight: 500;
+  //font-style: normal;
+  letter-spacing: 0.1em;
 }
 
 h5 {
@@ -100,9 +85,14 @@ h5 {font-size: 1.5em;}
 }
 
 h6 {
-  font-size: 15px;
-  color: grey;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  color: white;
   text-align: center;
+  margin-bottom: 3%;
   padding-top: 3%;
 }
 
@@ -121,23 +111,19 @@ h6 {
 	color: red;
 }
 
-.logo a {
-  all: unset;
-}
-
 .logo img{
   display: block;
   float: left;
   z-index: 5;
   position: absolute;
-  width: 75px;
-  height: 75px;
+  width: 82px;
+  height: 82px;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
 
 .logo img:hover {
-  border-color: #9ecaed;
-  box-shadow: 0 0 10px #9ecaed;
+  border-color: rgba(223,190,106,0.7);
+  box-shadow: 0 0 10px rgba(223,190,106,0.7);
 }
 
 .logged-in a {
@@ -151,7 +137,7 @@ h6 {
 }
 
 .logged-in a:hover {
-  color: #9ecaed;
+ color: rgba(223,190,106,0.7);
 }
 
 .menu a{
@@ -194,10 +180,11 @@ h6 {
   box-sizing: border-box;
   width: 100%;
   height: 75px;
-  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
-  background-color: rgba(0, 0, 0, 0.9);
+  //box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+  //background-color: rgba(0, 0, 0, 0.9);
   filter: alpha(opacity=80); 
   color: white;
+  margin-bottom: 3%;
   position: relative; 
   float: right;
   text-decoration: none;
@@ -248,6 +235,7 @@ h6 {
 .entry {
   padding-top: 3%;
   padding-left: 5%;
+  padding-right: 5%;
 }
 
 .register-button a {
@@ -259,13 +247,15 @@ h6 {
   height: 20px;
 }
 
-
+input.form-control:active {
+  border-color: rgba(223,190,106,0.7);
+}
 
 input.form-control{
   box-sizing: border-box;
   width: 100%;
   height: 30px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .btn-primary, .btn-default{
@@ -298,8 +288,8 @@ form {
 }
 
 input.form-control:focus {
-  border-color: #9ecaed;
-  box-shadow: 0 0 10px #9ecaed;
+  border-color: rgba(223,190,106,0.7);
+  box-shadow: rgba(223,190,106,0.7);
  
 }
 

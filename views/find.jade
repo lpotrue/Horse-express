@@ -3,9 +3,12 @@ extends layout
 block content
   link(rel='stylesheet', href='/stylesheets/cards2.css')
   link(rel='stylesheet', href='/stylesheets/find.css')
+  link(rel='stylesheet', href='/stylesheets/button.css')
+  link(rel='stylesheet', href='/stylesheets/horse.css')
+
   .container
 
-    h6 Find Horses by Owner 
+    h3 Find Horses by Owner 
     col-12
    .cards
     each owner in owners
@@ -13,7 +16,7 @@ block content
       .card-image
        
       .card-title
-       a(href="/owner/"+owner._id) #{owner.username} 
+       a.btnss(href="/owner/"+owner._id) #{owner.username} 
        
   
 

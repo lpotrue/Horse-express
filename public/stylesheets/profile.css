@@ -1,9 +1,15 @@
 
+
 html {
   background: #f5f7f8;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   padding: 20px 0;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
 }
 
 .band {
@@ -17,6 +23,11 @@ html {
   grid-template-rows: auto;
   grid-gap: 20px;
   
+}
+
+#file-input {
+  background-color: white;
+  width: 100px;
 }
 
 @media only screen and (min-width: 500px) {
@@ -116,6 +127,10 @@ h1 {
   font-size: 20px;
   margin: 0;
   color: #333;
+}
+
+h6 {
+  padding: 3%;
 }
 
 .card {

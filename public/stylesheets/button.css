@@ -1,48 +1,29 @@
-h2 {
-
-	margin: auto;
-	padding-top: 2%;
-	text-align: center;
-}
-
-.card-image {
-	height: 0;
-}
-
-.card {
-	display: block;
-	align-content: center;
-	height: 100px;
-	width: 250px;
-}
-
 .btnss {
-  display: block;
-  margin: auto;
-  justify-content: center;
-  text-align: center;
+  display: inline-block;
   background: transparent;
   text-transform: uppercase;
   font-weight: 500;
   font-style: normal;
-  //font-size: 0.625rem;
+  font-size: 0.625rem;
   letter-spacing: 0.3em;
   color: rgba(223,190,106,0.7);
   border-radius: 0;
-  padding: 0px 80px 20px;
+  padding: 18px 80px 20px;
   transition: all 0.7s ease-out;
   background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
   background-position: 1% 50%;
-  background-size: 50% 100%;
+  background-size: 300% 300%;
   text-decoration: none;
   margin: 0.625rem;
   border: none;
-  height: 10px;
-  width: 20px;
+  border: 1px solid rgba(223,190,106,0.3);
 }
 
 
+
 .btnss:hover {
+  color: #fff;
+  border: 1px solid rgba(223,190,106,0);
   color: $white;
   background-position: 99% 50%;
   cursor: pointer;
@@ -52,4 +33,19 @@ body {
   background: #231f20;
   color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arials, sans;
+}
+
+
+
+
+
+/*article {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
