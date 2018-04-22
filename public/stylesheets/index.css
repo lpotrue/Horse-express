@@ -82,6 +82,7 @@ h3 {
     font-size: 1.5em;
     color: #87613d;
     margin-bottom: 30px;
+    padding-top: 0;
 }
 
 .error{
@@ -187,7 +188,7 @@ button.form-btn.dx {
 input {
     border: none;
     border-bottom: 1px solid #ffc185;
-    width: 110%;
+    width: 100%;
     font-family: 'Roboto';
     color: #ff7d00;
     text-align: center;

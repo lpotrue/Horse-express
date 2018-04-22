@@ -144,7 +144,7 @@ h2 {
   letter-spacing: 0.2em;
   bottom: 0;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 520px) {
 h2 { letter-spacing: normal;
     font-size: 1em;}
  }
@@ -255,7 +255,7 @@ img.logo:hover {
 	text-align: center;
 	box-sizing: border-box;
   width: 100%;
-  height: 120px;
+  height: 75px;
   color: white;
   position: relative; 
   float: right;
