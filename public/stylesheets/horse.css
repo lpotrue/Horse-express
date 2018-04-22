@@ -72,7 +72,7 @@ a:hover {
 	line-height: 100%;
 	margin-left: 10%;
 	margin-right: 10%;
-    border-bottom: 2px solid white;
+    border-bottom: 1.5px solid white;
     -webkit-background-clip: padding-box; /* for Safari */
 }
 
@@ -127,9 +127,9 @@ button.bt{
     font-family: raleway, sans-serif;
     text-transform: uppercase;
     font-style: normal;
-    font-size: 0.75em;
+    font-size: 1em;
     letter-spacing: 0.3em;
-    height: 45px;
+    height: 50px;
     text-decoration: none;
     margin: 0.625rem;
     width: 200px;
@@ -138,7 +138,7 @@ button.bt{
     background-color: black;
     align-content: center;
     border: 2px black;
-     padding: 18px 80px 20px;
+    padding: 18px 90px 20px;
     box-shadow: 2px 5px 5px #a17f1a;
     display: inline-block;
     position: relative;
@@ -164,31 +164,31 @@ button.bt:active {
 
 .entry-area{
 	text-align: center;
-  border-top: 2px solid white;
-	margin-left: 5%;
-	margin-right: 5%;
+  border-top: 1.5px solid white;
+	margin-left: 10%;
+	margin-right: 10%;
 	padding-top: 3%;
 }
 
 .form-control{
-	width: 70%;
 	margin: auto;
 	margin-top: 3%;
 	box-sizing: border-box;
-    width: 100%;
-    height: 150px;
-    border-radius: 5px;
-    -webkit-appearance: textfield;
-    background-color: white;
-    -webkit-rtl-ordering: logical;
-    user-select: text;
-    text-indent: 5%;
-    cursor: auto;
-    padding: 5px;
-    border-style: inset;
-    border-color: initial;
-    border-image: initial;
-    margin-bottom: 1%;
+  min-width: 350px;
+  height: 200px;
+  font-size: 18px;
+  border-radius: 5px;
+   -webkit-appearance: textfield;
+  background-color: white;
+  -webkit-rtl-ordering: logical;
+  user-select: text;
+  text-indent: 5%;
+  cursor: auto;
+  padding: 5px;
+  border-style: inset;
+  border-color: initial;
+  border-image: initial;
+  margin-bottom: 1%;
 }
 
 .form-group {
@@ -198,10 +198,11 @@ button.bt:active {
 
 
 h6{ 
+  padding-bottom: 3%:;
   color: #a17f1a;
 	justify-content: center;
 	margin: auto;
-	font-size: 0.85rem;
+	font-size: 1em;
   font-weight: 800;
 	
 }
@@ -229,7 +230,7 @@ h3 {
  text-transform: uppercase;
  font-weight: 500;
  font-style: normal;
- font-size: .75em;
+ font-size: 1.2em;
  letter-spacing: 0.3em;
  color: white;
  justify-content: center;
@@ -240,6 +241,7 @@ h3 {
 }
 
 #toggle-switch{
+  width: 70px;
   color: #a17f1a;
   text-align: center;
 }

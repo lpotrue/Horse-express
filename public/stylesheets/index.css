@@ -7,6 +7,7 @@ html{
 
 
 body {
+    width: 100%;
     background: #ffc185;
 }
 
@@ -30,12 +31,17 @@ form {
     position: absolute;
     text-align: center;
     background: #fff;
-    width: 350px;
+    width: 300px;
     height: 490px;
     border-radius: 5px;
-    padding: 30px 20px 0 20px;
+    padding: 100px 50px 10px 50px;
     box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.6);
     box-sizing: border-box;
+}
+@media only screen and (max-width: 500px) {
+form{width: 250px;
+    height: 400px;
+    padding: 30px 20px 0 20px;}
 }
 
 p {
@@ -56,18 +62,29 @@ p > span {
 
 h3 {
     font-family: 'Dosis';
-    font-size: 35px;
+    font-size: 1em;
     text-transform: uppercase;
     color: #87613d;
     margin-bottom: 30px;
     padding-top: 0;
 }
 
+.error{
+    color: orange;
+}
+
 h4 {
-   font-family: 'Dosis';
+    font-size: 1.2em;
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 5%;
+    font-family: 'Cinzel', serif;
     text-transform: uppercase;
     color: grey
-    padding-bottom: 0;
+}
+@media only screen and (max-width: 400px) {
+    h4{ font-size: .9em;
+}
 }
 
 h5 {
