@@ -29,7 +29,7 @@ input.form-control{
   text-indent: 5px;
   border-radius: 10px;
   height: 50px;
-  font-size: large;
+  font-size: 18px;
 }
 
 input#input.form-control:active{
@@ -45,7 +45,7 @@ input#input.form-control:active{
 }
 
 .btnss{
-  font-size: 1em;
+  font-size: .75em;
   font-family: raleway, sans-serif;
   font-weight: 500;
   box-shadow: 2px 5px 5px #a17f1a;

@@ -7,11 +7,7 @@ h4{
   text-decoration: none;
   margin: 0.625rem;
 }
-@media only screen and (max-width: 400px) {
-  h4{font-size: .75em;
 
-}
-}
 
 
 .btnss{
@@ -47,11 +43,6 @@ li {
 	list-style: none;
   border-top: 1px solid #a17f1a;
 }
-@media only screen and (max-width: 500px) {
-  li{
-    margin-left: 0;
-    margin-right: 0;
-  }
 
 li a{
 	margin-top: 3%;
@@ -81,12 +72,7 @@ a:hover {
     border-bottom: 1.5px solid white;
     -webkit-background-clip: padding-box; /* for Safari */
 }
-@media only screen and (max-width: 500px) {
-  .horse-info{
-            margin-right: 0;
-            margin-left: 0;
-} 
-}
+
 
 .info {
   text-transform: uppercase;;
@@ -98,9 +84,6 @@ a:hover {
 	box-sizing: border-box;	
 }
 
-@media only screen and (max-width: 700px) {
-	.info { margin-right: 0;}
-}
 
 a.btn{
     font-family: raleway, sans-serif;
@@ -185,13 +168,11 @@ button.bt:active {
 	margin: auto;
 	margin-top: 3%;
 	box-sizing: border-box;
-  min-width: 350px;
   height: 200px;
   font-size: 18px;
   border-radius: 5px;
    -webkit-appearance: textfield;
   background-color: white;
-  -webkit-rtl-ordering: logical;
   user-select: text;
   text-indent: 5%;
   cursor: auto;
@@ -203,7 +184,6 @@ button.bt:active {
 }
 @media only screen and (max-width: 500px) {
   .form-control{
-      width: 300px;
       font-size: 15px;
   }
 }
@@ -222,11 +202,6 @@ h6{
 	font-size: 1em;
   font-weight: 800;
 	
-}
-@media only screen and (max-width: 700px){
-	h6{
-		font-size: .85em;
-	}
 }
 
 .log{
@@ -254,11 +229,6 @@ h3 {
  margin: auto;
  text-align: center;
  padding-bottom: 3%;
-}
-@media only screen and (max-width: 500px) {
-  h3{
-    font-size: 1em;
-  }
 }
 
 #toggle-switch{

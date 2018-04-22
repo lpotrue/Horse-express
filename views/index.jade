@@ -9,6 +9,9 @@ block content
     h2 every stride of the way...
   .container 
       form.signIn(role='form', action="/login", method="post", style='max-width: 300px;')
+       .demo Demo Login:
+             Username: Demo
+             Password: demo123
        .error #{error}
        h3
         | Welcome
@@ -24,6 +27,9 @@ block content
   .container
 
      form.register(role='form', action="/register",method="post", style='max-width: 300px;')
+       .demo Demo Login:
+             Username: Demo
+             Password: demo123
        .error #{error} 
        h3
         | Create Your Account
