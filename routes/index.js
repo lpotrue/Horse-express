@@ -66,7 +66,7 @@ router.get('/owner/:id', loggedIn, (req, res) => {
     .exec()
     .then(horses => {
 
-       let intro = 'has not added any horses yet..'
+       let intro = 'no horses yet...'
         if (horses.length>0){
          intro = horses[horses.length-1].ownername
         }

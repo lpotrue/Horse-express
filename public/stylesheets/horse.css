@@ -7,8 +7,15 @@ h4{
   text-decoration: none;
   margin: 0.625rem;
 }
+@media only screen and (max-width: 500px) {
+  h4{ margin-left: 0;
+     margin-right: 0;
+  }
+}
 
-
+form{
+  display: contents;
+}
 
 .btnss{
 	margin-bottom: 2%;
@@ -38,10 +45,15 @@ h4{
 
 li {
   text-align: center;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
 	list-style: none;
-  border-top: 1px solid #a17f1a;
+  border-top: 1px dotted #a17f1a;
+}
+@media only screen and (max-width: 500px) {
+  li{ margin-left: 0;
+      margin-right: 0;
+ }
 }
 
 li a{
@@ -72,7 +84,14 @@ a:hover {
     border-bottom: 1.5px solid white;
     -webkit-background-clip: padding-box; /* for Safari */
 }
-
+@media only screen and (max-width: 400px) {
+     .horse-info{
+      margin-right: 0;
+      margin-left: 0;
+      padding-left: 0;
+      padding-right: 0;
+     }
+}
 
 .info {
   text-transform: uppercase;;
@@ -162,6 +181,12 @@ button.bt:active {
 	margin-left: 10%;
 	margin-right: 10%;
 	padding-top: 3%;
+}
+@media only screen and (max-width: 500px) {
+  .entry-area{
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .form-control{

@@ -36,6 +36,11 @@ input#input.form-control:active{
   border: orange;
 }
 
+form{
+  display: contents;
+}
+
+
 .dropdown {
   display: none;
 }

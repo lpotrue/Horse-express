@@ -48,7 +48,7 @@ block content
      if (user)
      .add
       h6 Add a Horse 
-        form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
+        form(role='form', action="/add-horse", method="post", style='max-width: 350px;' enctype="multipart/form-data")
          .form-group
              input.form-control(type='text', name="horsename", placeholder='Enter Horsename', required='')
          .form-group
@@ -58,9 +58,9 @@ block content
          .form-group
              input.form-control(type='text', name="discipline", placeholder='Enter Discipline', required='')
              input#file-input(type='file', name='pic', required='')
-             img#preview(height='150')
+             img#preview(height='200')
          
-           button.btnss(type='submit') Submit
+         button.btnss(type='submit') Submit
           
-           a(href='/')
-           button.btnss(type="button") Cancel
+         a(href='/')
+         button.btnss(type="button") Cancel
