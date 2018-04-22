@@ -16,7 +16,7 @@ input#file-input{
           background-color: white;
           color: orange;
 
-}
+ }
 }
 
 input#file-input:hover{
@@ -29,15 +29,17 @@ input.form-control{
   text-indent: 5px;
   border-radius: 10px;
   height: 50px;
+  width: 50%;
   font-size: 18px;
 }
+
 
 input#input.form-control:active{
   border: orange;
 }
 
 form{
-  display: contents;
+  width: 100%;
 }
 
 

@@ -55,7 +55,7 @@ form {
 @media only screen and (max-width: 400px) {
   form{width: 250px;
     height: 400px;
-    padding: 20px 20px 0 20px;
+    padding: 0px 20px 0 20px;
     margin-left: 40px;
     margin-top: 100px;}
 }
@@ -79,10 +79,15 @@ p > span {
 h3 {
     text-transform: uppercase;;
     font-family: 'Dosis';
-    font-size: 1.5em;
+    font-size: 30px;
     color: #87613d;
     margin-bottom: 30px;
     padding-top: 0;
+}
+@media only screen and (max-width: 400px) {
+    h3{
+        font-size: 1em;
+    }
 }
 
 .error{
@@ -100,7 +105,7 @@ h4 {
 @media only screen and (max-width: 400px) {
     h4{ font-size: .9em;
         margin-top: 2px;
-}
+ }
 }
 
 h5 {
