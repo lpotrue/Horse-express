@@ -16,6 +16,12 @@ const S3_BUCKET = process.env.S3_BUCKET;
   console.log("S3_BUCKET", S3_BUCKET) 
 
 
+var express = require('express');
+var fs = require('fs'); // file system, to save files
+var request = require('request');
+var url = require('url'); // to parse URL and separate filename from path
+var progress = require('progress-stream'); // to have a progress bar during upload
+
 
 
 router.get('/', (req, res) => {

@@ -15,10 +15,10 @@ var users = require('./routes/users');
 const fileUpload = require('express-fileupload');
 
 var app = express();
-//app.use(fileUpload());
+app.use(fileUpload());
 
 
-//app.use('/fileuploads', express.static(path.join(__dirname, '/fileuploads')));
+app.use('/fileuploads', express.static(path.join(__dirname, '/fileuploads')));
 
 
 
