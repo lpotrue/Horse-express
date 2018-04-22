@@ -29,11 +29,14 @@ input.form-control{
   text-indent: 5px;
   border-radius: 10px;
   height: 50px;
-  width: 50%;
+  width: 350px;
   font-size: 18px;
 }
-
-
+@media screen and (max-width: 450px) {
+    input.form-control{
+      width: 300px;
+    }
+}
 input#input.form-control:active{
   border: orange;
 }
