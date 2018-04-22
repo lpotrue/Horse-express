@@ -1,4 +1,5 @@
 div.stars {
+  padding-top: 3%;
   display: inline-block;
   margin: auto;
 }
@@ -32,3 +33,14 @@ label.star:before {
   content: '\f006';
   font-family: FontAwesome;
 }
+
+.log {
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  color: white;
+  margin-bottom: 3%;
+  position: relative; 
+  text-decoration: none;
+}
+

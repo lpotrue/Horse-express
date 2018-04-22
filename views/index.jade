@@ -1,6 +1,7 @@
 extends layout
 block content
   link(rel='stylesheet', href='/stylesheets/index.css')
+ 
   .container
   
   #background
@@ -21,6 +22,7 @@ block content
          button.form-btn.dx(type='submit') Log In
 
   .container
+
      form.register(role='form', action="/register",method="post", style='max-width: 300px;')
        .error #{error} 
        h3

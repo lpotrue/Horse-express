@@ -1,35 +1,11 @@
-body {
-	 background: #f5f7f8;
-	}
-
-.form-control-horse {
-	width: 30%;
-}
-
-h3 {
-	border-top: 1px solid white;
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-
-.log {
-  font-family: 'Raleway', sans-serif;
-   z-index: 2;
+*{
   text-align: center;
-  box-sizing: border-box;
-  width: 100%;
-  height: 75px;
-  color: white;
-  margin-bottom: 3%;
-  position: relative; 
-  float: right;
-  text-decoration: none;
-  padding-top: 100px;
 }
 
-body {
-  background: #231f20;
-  color: #fff;
-  font-family: "Helvetica Neue", Helvetica, Arials, sans;
+#background-all{
+  height: 100vh;
+}
+
+html{
+  top: 0;
 }

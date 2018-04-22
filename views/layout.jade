@@ -11,10 +11,11 @@ html
     link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
 
   body
-   
-    .logo 
-      a(href="/")
-        img.logo(src="https://image.ibb.co/fX03Ow/IMG_3420.jpg.jpg" alt="Logo")
+    
+    .logged
+      
+      a.logo(href="/")
+       img.logo(src="https://image.ibb.co/mKESz7/IMG_4222.jpg" alt="Logo")
       if (user)
        .logged-in
          h5 Hello, #{user.username}!

@@ -4,66 +4,63 @@ block content
   link(rel='stylesheet', href='/stylesheets/cards2.css')
   link(rel='stylesheet', href='/stylesheets/slides.css')
   link(rel='stylesheet', href='/stylesheets/button.css')
+  link(rel='stylesheet', href='/stylesheets/profile.css')
 
-
-  .container
-   if(horses)
-    .slideshow-container
+  #background-all
+   .container
+     if(horses)
+      .slideshow-container
+      each horse in horses
+         .mySlides.fade
+          img(src="#{horse.url[0]}", class="slide-image")
+          .text #{horse.horsename}
+            div(style='text-align:center')
     each horse in horses
-       .mySlides.fade
-        img(src="#{horse.url[0]}", class="slide-image")
-        .text #{horse.horsename}
-          div(style='text-align:center')
-  each horse in horses
-      span.dot
-  .col-12
-   .cards
-    each horse in horses
-     .card
-      .card-image
-       img(src="#{horse.url[0]}", class="card-image")
-      .card-title
-       #{horse.horsename}
-  
+        span.dot
+   
+     .cards
+      each horse in horses
+       .card
+        .card-image
+         img(src="#{horse.url[0]}", class="card-image")
+        .card-title
+         #{horse.horsename}
+    
+         
+         h2
+          | #{horse.horsename}
        
-       h2
-        | #{horse.horsename}
-     
-       .card-content
-          p
-            h4 Born:
-             
-              span #{horse.age}
-             
-            h4 Breed:
-             
-              span #{horse.breed}  
+         .card-content
+            p
+              h4 Born:
+               
+                span #{horse.age}
+               
+              h4 Breed:
+               
+                span #{horse.breed}  
 
-        a.btn.btnss(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
-  if (!user)
-    a(href="/login") Login
-    br
-    a(href="/register") Register
-  if (user)
-  .add
-    h6 Add a Horse 
-      form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
-       .form-group
-           input.form-control(type='text', name="horsename", placeholder='Enter Horsename', required='')
-           //textarea(type='text', name="description", placeholder='Make an Description')
-       .form-group
-           input.form-control(type='year', name="age", placeholder='Year of Birth', required='')
-       .form-group
-           input.form-control(type='text', name="breed", placeholder='Enter Breed', required='')
-       .form-group
-           input.form-control(type='text', name="discipline", placeholder='Enter Discipline', required='')
-           //input#inp(type='file', name='pic')
-           //p#b64
-           //img#img(height='150')
-           input#file-input(type='file', name='pic', required='')
-           img#preview(height='150')
-       
-         button.btn.btnss(type='submit') Submit
-        
-         a(href='/')
-         button.btn.btnss(type="button") Cancel
+          a.btnss(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
+     if (!user)
+      a(href="/login") Login
+      br
+      a(href="/register") Register
+     if (user)
+     .add
+      h6 Add a Horse 
+        form(role='form', action="/add-horse", method="post", style='max-width: 300px;' enctype="multipart/form-data")
+         .form-group
+             input.form-control(type='text', name="horsename", placeholder='Enter Horsename', required='')
+         .form-group
+             input.form-control(type='year', name="age", placeholder='Year of Birth', required='')
+         .form-group
+             input.form-control(type='text', name="breed", placeholder='Enter Breed', required='')
+         .form-group
+             input.form-control(type='text', name="discipline", placeholder='Enter Discipline', required='')
+             input#file-input(type='file', name='pic', required='')
+             img#preview(height='150')
+         
+           button.btnss(type='submit') Submit
+          
+           a(href='/')
+           button.btnss(type="button") Cancel

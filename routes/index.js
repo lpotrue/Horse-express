@@ -15,14 +15,8 @@ const S3_BUCKET = process.env.S3_BUCKET;
   console.log("fresh")
   console.log("S3_BUCKET", S3_BUCKET) 
 
-/*
-var express = require('express');
-var fs = require('fs'); // file system, to save files
-var request = require('request');
-var url = require('url'); // to parse URL and separate filename from path
-var progress = require('progress-stream'); // to have a progress bar during upload
 
-*/
+
 
 router.get('/', (req, res) => {
     console.log("homepage")
@@ -76,9 +70,9 @@ router.get('/owner/:id', loggedIn, (req, res) => {
     
 });
 
-router.get('/entry/:id', loggedIn, (req, res) => {
+router.get('/entry/:id', loggedIn, (req, res) => {  
     console.log("vanilla", req.params.id)
-   
+
     Entry
     .findOne({_id: req.params.id})
     .exec()
@@ -109,7 +103,6 @@ router.get('/horse/:id', loggedIn, (req, res) => {
             })
 
             .catch(err => { console.error(err)});
-            //res.render('horse', { user : req.user, horse: horse });
     })
     .catch(err => { console.error(err)});
 
@@ -122,10 +115,11 @@ router.post('/add-horse', loggedIn, (req, res) => {
            throw err;
            return res.end("Error uploading file.");
        }
-       //let randomIpsum = randomIpsum()
+
+      
        let randomIpsum = "to be continued"
        console.log("Louie", req.file)
-       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, ownername: req.user.username, age: req.body.age, breed: req.body.breed, discipline: req.body.disclipine, description: randomIpsum, url: [url]})
+       var h = new Horse({horsename: req.body.horsename, owner: req.user._id, ownername: req.user.username, age: req.body.age, breed: req.body.breed, discipline: req.body.discipline, description: randomIpsum, url: [url]})
         h.save(function(err) {
             if (err){
              throw (err);
@@ -139,7 +133,7 @@ router.post('/add-horse', loggedIn, (req, res) => {
 router.post('/horse/:id', loggedIn, (req, res) => {
     console.log(req.body)
     console.log('zebra')
-    var o = new Entry({entry: req.body.entry, writtenBy: req.user._id, horse: req.params.id, stars: req.body.star, date: new Date()})
+    var o = new Entry({entry: req.body.entry, writtenBy: req.user.username, horse: req.params.id, stars: req.params.star, date: new Date()})
     o.save(function(err) {
         if (err){
          throw err;
@@ -161,6 +155,7 @@ router.post('/register', (req, res, next) => {
         if (err) {
           
           return res.render('index', { error : err.message });
+
 
       }
 
@@ -190,9 +185,9 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/', fai
         res.redirect('/profile');
     });
 });
+
 router.delete('/entry/:id', loggedIn, (req, res) => {
-  console.log("kitty")
-  //Entry.delete(req.params.id);
+  console.log("horses")
   Entry.findOne({'_id':req.params.id})
   .exec()
     .then(entry => {

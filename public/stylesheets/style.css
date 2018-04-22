@@ -1,18 +1,116 @@
-*{
-  //border: 1px dashed black;
+
+html{
+  position: relative;
+  background-color: black;
+  height: 110vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  margin-top: 0;
 }
 
-body {
-  //font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  background: #f5f7f8;
+#background-all{
+  height: 120vh;
+  background-color: #383838;
+  height: 100%;
+  padding-bottom: 10%;
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 900px) {
+   body{ margin-left: 20%;
+         margin-right: 20%;}
+  }
+
+@media only screen and (min-width: 899px) {
+   body{ margin-left: 10%;
+        margin-right: 10%}
+}
+
+@media screen and (max-width: 450px) {
+  body{
+    width: 100%;
+  }
+}
+
+input.form-control{
+  border-radius: 10px;
+  height: 40px;
 }
 
 a:hover {
-  color: rgba(223,190,106,0.7);
+  color: black;
 }
 
+button.btn.btnsss{
+  color: black;
+  border-radius: 10px;
+  border: 2px black;
+  background-color: grey;
+}
+
+button.btn.btnsss:hover{
+  background-color: rgba(223,190,106,0.8);
+}
+
+button.btnss:hover{
+  background-color: darkgrey;
+  color: black;
+}
+
+a.btnss:hover{
+  background-color: darkgrey;
+  color: black;
+}
+
+.btnss, a.btnss{
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  border: 2px black;
+  background-color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  padding: 18px 80px 15px;
+  text-decoration: none;
+  margin: 0.625rem;
+  box-shadow: 2px 5px 5px #a17f1a;
+}
+
+.btnss:hover{
+  background-color: darkgrey;
+  color: black;
+}
+
+a.btnss{
+  font-family: raleway, sans-serif;
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 0.75em;
+    letter-spacing: 0.3em;
+    padding: 18px 80px 20px;
+    text-decoration: none;
+    margin: 0.625rem;
+    width: 100px;
+    color: white;
+    border-radius: 10px;
+    background-color: black;
+    align-content: center;
+    border: 2px black;
+    box-shadow: 2px 5px 5px #a17f1a;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s 0s ease-in;
+    z-index: 1;
+}
+
+.card-title{
+  color: black;
+  font-weight: bold;
+}
 
 
 .form-control-horse {
@@ -37,7 +135,7 @@ h1 {
 h2 {
   font-family: 'Cinzel', serif;
   font-weight: lighter;
-  //position: absolute;
+  color: white;
   margin: auto;
   text-align: center;
   justify-content: center;
@@ -50,15 +148,12 @@ h2 {
 }
 @media only screen and (max-width: 700px) {
 h2 { letter-spacing: normal;
-    font-size: 1rem;}
+    font-size: 1em;}
  }
 
 h3 {
-//font-family: 'Open Sans Condensed', sans-serif;
-font-family: 'Raleway', sans-serif;
 font-weight: normal;
 padding-top: 30%;
-text-align: right;
 color: white;
 }
 
@@ -69,7 +164,6 @@ h4 {
   padding-right: 5%;
   text-transform: uppercase;
   font-weight: 500;
-  //font-style: normal;
   letter-spacing: 0.1em;
 }
 
@@ -85,10 +179,10 @@ h5 {font-size: 1.5em;}
 }
 
 h6 {
-  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
   font-weight: 500;
   font-style: normal;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   letter-spacing: 0.3em;
   color: white;
   text-align: center;
@@ -111,17 +205,29 @@ h6 {
 	color: red;
 }
 
-.logo img{
+a.logo{
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: 100;
+}
+
+img.logo{
   display: block;
   float: left;
   z-index: 5;
-  position: absolute;
   width: 100px;
   height: 100px;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
-
-.logo img:hover {
+@media only screen and (max-width: 550px) {
+   img.logo {
+      height: 75px;
+      width: 75px;
+   }
+}
+img.logo:hover {
   border-color: rgba(223,190,106,0.7);
   box-shadow: 0 0 10px rgba(223,190,106,0.7);
 }
@@ -132,7 +238,6 @@ h6 {
   padding-left: 2%;
   padding-right: 2%;
   color: white;
-  //color: #00B7FF;
   text-decoration: none;
 }
 
@@ -148,19 +253,13 @@ h6 {
   float: right;
 }
 
-.menu {
+.logged {
   font-family: 'Raleway', sans-serif;
    z-index: 2;
 	text-align: center;
-	//background: #eee;
-  //background:rgba(255,255,255, 0.9);
 	box-sizing: border-box;
   width: 100%;
   height: 100px;
-  //box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
-  //background-color: rgba(0, 0, 255, 0.7);
-  filter: alpha(opacity=80); 
-  //color: #00B7FF;
   color: white;
   position: relative; 
   float: right;
@@ -180,13 +279,11 @@ h6 {
   box-sizing: border-box;
   width: 100%;
   height: 75px;
-  //box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
-  //background-color: rgba(0, 0, 0, 0.9);
   filter: alpha(opacity=80); 
   color: white;
   margin-bottom: 3%;
   position: relative; 
-  float: right;
+  
   text-decoration: none;
 }
 
@@ -207,16 +304,6 @@ h6 {
   width: 50%;
   text-align: center;
   height: 150px;
-
-  /*background-color: gold;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
-  border-radius: 5px;
-  border: 2px solid #dadada;
-  width: 175px;
-  height: 30px;*/
-
 }
 
 .register-button a{
@@ -233,9 +320,16 @@ h6 {
 }
 
 .entry {
-  padding-top: 3%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1em;
+  letter-spacing: 0.3em;
+  text-decoration: none;
+  margin: 0.625rem;
+  padding-bottom: 3%;
   padding-left: 5%;
   padding-right: 5%;
+  color: lightgrey;
 }
 
 .register-button a {
@@ -265,7 +359,6 @@ input.form-control{
    
    height: 30px;
    color: white;
-   //background: #4D4845;
    background-color: rgba(0, 0, 255, 0.7);
 }
 
@@ -293,8 +386,6 @@ input.form-control:focus {
  
 }
 
-
-
 .profile-btn {
  align-items: center;
 }
@@ -308,20 +399,8 @@ input.form-control:focus {
   
 }
 
-.caramia {
-  background-image: url("https://image.ibb.co/niBzJ6/Messages_Image_1176467859.jpg");
-  position: absolute;
-  overflow: hidden;
-  height: 30%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-}
-
 .container{
 	margin: auto;
-  //height: 100vh;
 }
 
 .form-group {
@@ -333,35 +412,13 @@ input.form-control:focus {
   background-position: center;
 }
 
-.background-2 {
-  position: relative;
-  background: #00B7FF;
-  background-size: cover;
-  width: 100%;
-  height: 500px;
-}
-
-.background-3 {
-  //background-image: url("https://image.ibb.co/kkArtw/IMG_3423.jpg");
-  position: relative;
-  overflow: hidden;
-  height: 500px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 1;
-}
 
 #background {
   background-image: url("https://image.ibb.co/jyLgfm/caramiaarena.jpg");
-  //background-image: url("https://image.ibb.co/mSRvdw/IMG_0882.jpg");
-  //background-image: url("../uploads/109f2c01fe647de0f139376842b258ad");
   position: relative;
-  //width: 100%;
   height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
-  //background-position: 100%;
   z-index: 1;
 }
 

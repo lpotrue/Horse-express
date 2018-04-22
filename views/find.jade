@@ -1,24 +1,21 @@
 extends layout
 
 block content
-  link(rel='stylesheet', href='/stylesheets/cards2.css')
   link(rel='stylesheet', href='/stylesheets/find.css')
-  link(rel='stylesheet', href='/stylesheets/button.css')
-  link(rel='stylesheet', href='/stylesheets/horse.css')
-
-  .container
-
-    h3 Find Horses by Owner 
-    col-12
-   .cards
-    each owner in owners
-     .card
-      .card-image
-       
-      .card-title
-       a.btnss(href="/owner/"+owner._id) #{owner.username} 
-       
   
+ 
+  #background-all
+    
+     h3 Find Horses by Owner 
+       col-12
+    
+      each owner in owners
+       .card
+        .card-image
+         
+        a(href="/owner/"+owner._id) #{owner.username} 
+         
+    
 
 
         

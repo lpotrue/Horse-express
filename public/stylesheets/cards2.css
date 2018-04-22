@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
+//@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
 
 
 // colour stuff
@@ -16,13 +16,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-body {
-  background: @lightBG;
-  color: @darkGrey;
-  font-family: 'Source Sans Pro', sans-serif;
-  text-rendering: optimizeLegibility;
 }
 
 
@@ -134,16 +127,7 @@ h3 {
   transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
   transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91), -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
-/*\\img::before {
-  content: "";
-  display: block;
-  padding-top: 56.25%;
-}
-@media (min-width: 40rem) {
-  .card__image::before {
-    padding-top: 66.6%;
-  }
-}*/
+
 
   .cards {
   display: -webkit-box;
@@ -156,22 +140,10 @@ h3 {
   padding: 0;
 }
 .card-content {
-  //display: -webkit-box;
-  //display: -ms-flexbox;
-  //display: flex;
   padding: 1rem;
   width: 33.3333%;
 }
-/*@media (min-width: 40rem) {
-  .card-content {
-    width: 50%;
-  }
-}
-@media (min-width: 56rem) {
-  .card-content {
-    width: 33.3333%;
-  }
-}*/
+
 .card {
   background-color: white;
   border-radius: 0.25rem;
@@ -313,44 +285,6 @@ h3 {
     transition: all 0.3s 0.2s ease-out;
   }
 
-.btnss {
-  color: #fff;
-  display: inline-block;
-  background: transparent;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 0.625rem;
-  letter-spacing: 0.3em;
-  border-radius: 0;
-  padding: 18px 80px 20px;
-  transition: all 0.7s ease-out;
-  background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
-  background-position: 100% 0%;
-  background-size: 300% 300%;
-  text-decoration: none;
-  margin: 0.625rem;
-  border: none;
-  border: 1px solid rgba(223,190,106,0.3);
-}
-
-
-
-.btnss:hover {
-  color: rgba(223,190,106,0.7);
-  border: 1px solid rgba(223,190,106,0);
-  color: $white;
-  background-position: 99% 50%;
-  cursor: pointer;
-}
-
-body {
-  background: #231f20;
-  color: #fff;
-  font-family: "Helvetica Neue", Helvetica, Arials, sans;
-}
-
-
 .btnsss {
   box-sizing: border-box;
   width: 200px;
@@ -364,11 +298,6 @@ body {
   background-position: 99% 50%;
 }
 
-body {
-  background: #231f20;
-  color: #fff;
-  font-family: "Helvetica Neue", Helvetica, Arials, sans;
-}
 
 .intro {
  text-transform: uppercase;
@@ -384,18 +313,5 @@ body {
  padding-top: 1%;
 }
 
-
-
-
-/*article {
-  height: 100vh;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}*/
 
 

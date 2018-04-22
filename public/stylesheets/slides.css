@@ -9,7 +9,7 @@
   max-width: 1000px;
   position: relative;
  justify-content: center;
- //width: 100%;
+ padding-top: 5%;
 }
 
 /* Caption text */
@@ -18,6 +18,8 @@
   font-size: 15px;
   padding: 8px 12px;
   width: 100%;
+  color: white;
+  text-transform: capitalize;
   text-align: center;
 }
 
@@ -50,7 +52,7 @@
   width: 400px;
   margin: auto;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   .slide-image {width: 100%;}
 }
 

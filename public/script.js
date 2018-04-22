@@ -1,5 +1,4 @@
 
-
 $(document).ready(function (){
   
 $("#delete").click(function(){  
@@ -10,32 +9,11 @@ $("#delete").click(function(){
     success: function(result) {
       console.log(result)
       window.location = result.redirect
-        // Do something with the result
+       
     }
 });
 
 });
-/*
-$("button").click(function(){
-    if($(this).hasClass("confirm")){
-        $(this).addClass("done");
-        $("span").text("Deleted");
-    } else {
-        $(this).addClass("confirm");
-        $("span").text("Are you sure?");
-    }
-});
-
-// Reset
-$("button").on('mouseout', function(){
-    if($(this).hasClass("confirm") || $(this).hasClass("done")){
-        setTimeout(function(){
-            $("button").removeClass("confirm").removeClass("done");
-            $("span").text("Delete");
-        }, 3000);
-    }
-});
-*/
 
 $(".back").click(function(){
     $(".register").addClass("active-sx");
@@ -51,7 +29,31 @@ $(".log-in").click(function(){
 });
 
 
-  
+$("#confirm").click(function() {
+   {
+      history.go(-1);
+   }        
+   return false;
+});
+
+
+$('.toggle').click(function() {
+    $('.log').toggle('slow');
+});
+
+
+$('.toggle').click(function(){
+    var text = $(this).text();
+    if (text=="Show") { /*if text inside #toggleMessage is Show...*/
+      $(this).text("Hide"); /*Change button text to Hide*/
+     }
+     else {
+      $(this).text("Show"); 
+    }
+});
+     
+
+
   var slideIndex = 0;
 
 function showSlides() {
@@ -146,10 +148,7 @@ showSlides();
       xhr.send();
     }
 
-    /*
-     Function called when file input updated. If there is a file selected, then
-     start upload procedure by asking for a signed request from the app.
-    */
+    
     function initUpload(){
       const files = document.getElementById('file-input').files;
       const file = files[0];
@@ -159,9 +158,7 @@ showSlides();
       getSignedRequest(file);
     }
 
-    /*
-     Bind listeners when the page loads.
-    */
+    
     (() => {
         document.getElementById('file-input').onchange = initUpload;
     })();
