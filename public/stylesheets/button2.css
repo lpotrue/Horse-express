@@ -6,9 +6,10 @@
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.3em;
+  font-size: 1em;
   color: white;
   border-radius: 0;
-  padding: 18px 80px 20px;
+  padding: 18px 20px 20px;
   transition: all 0.7s ease-out;
   color: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
   background-position: 1% 50%;
