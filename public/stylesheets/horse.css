@@ -1,17 +1,18 @@
 
 h4{
   color: white;
-  font-size: 2em;
   font-weight: 800;
-  font-size: .75em;
+  font-size: 1em;
   letter-spacing: 0.3em;
   text-decoration: none;
   margin: 0.625rem;
 }
+@media only screen and (max-width: 400px) {
+  h4{font-size: .75em;
 
-.log{
-  display: none;
 }
+}
+
 
 .btnss{
 	margin-bottom: 2%;
@@ -46,6 +47,11 @@ li {
 	list-style: none;
   border-top: 1px solid #a17f1a;
 }
+@media only screen and (max-width: 500px) {
+  li{
+    margin-left: 0;
+    margin-right: 0;
+  }
 
 li a{
 	margin-top: 3%;
@@ -74,6 +80,12 @@ a:hover {
 	margin-right: 10%;
     border-bottom: 1.5px solid white;
     -webkit-background-clip: padding-box; /* for Safari */
+}
+@media only screen and (max-width: 500px) {
+  .horse-info{
+            margin-right: 0;
+            margin-left: 0;
+} 
 }
 
 .info {
@@ -127,7 +139,7 @@ button.bt{
     font-family: raleway, sans-serif;
     text-transform: uppercase;
     font-style: normal;
-    font-size: 1em;
+    font-size: .75em;
     letter-spacing: 0.3em;
     height: 50px;
     text-decoration: none;
@@ -138,7 +150,6 @@ button.bt{
     background-color: black;
     align-content: center;
     border: 2px black;
-    padding: 18px 90px 20px;
     box-shadow: 2px 5px 5px #a17f1a;
     display: inline-block;
     position: relative;
@@ -190,6 +201,12 @@ button.bt:active {
   border-image: initial;
   margin-bottom: 1%;
 }
+@media only screen and (max-width: 500px) {
+  .form-control{
+      width: 300px;
+      font-size: 15px;
+  }
+}
 
 .form-group {
 	margin-top: 3%;
@@ -237,7 +254,11 @@ h3 {
  margin: auto;
  text-align: center;
  padding-bottom: 3%;
- 
+}
+@media only screen and (max-width: 500px) {
+  h3{
+    font-size: 1em;
+  }
 }
 
 #toggle-switch{
