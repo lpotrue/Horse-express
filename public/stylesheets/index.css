@@ -19,6 +19,12 @@ body {
     background: #ffc185;
 }
 
+.demo{
+    color: #87613d;
+    font-family: 'Dosis';
+    font-size: 20px;
+}
+
 .container{
     position: absolute;
     width: auto;
@@ -42,14 +48,16 @@ form {
     width: 300px;
     height: 490px;
     border-radius: 5px;
-    padding: 100px 50px 10px 50px;
+    padding: 50px 10px 50px;
     box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.6);
     box-sizing: border-box;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 300px) {
 form{width: 250px;
     height: 400px;
-    padding: 30px 20px 0 20px;}
+    padding: 20px 20px 0 20px;
+    margin-left: 40px;
+    margin-top: 100px;}
 }
 
 p {
@@ -90,6 +98,7 @@ h4 {
 }
 @media only screen and (max-width: 400px) {
     h4{ font-size: .9em;
+        margin-top: 2px;
 }
 }
 

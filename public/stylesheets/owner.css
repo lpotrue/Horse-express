@@ -6,6 +6,14 @@ body{
 	height: 100vh;
 }
 
+#background-all{
+	height: 100vh;
+}
+
 a.btnss:hover{
 	color: black;
+}
+
+h4{
+	text-transform: uppercase;
 }

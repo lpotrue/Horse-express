@@ -169,6 +169,7 @@ button.bt:active {
 	margin-top: 3%;
 	box-sizing: border-box;
   height: 200px;
+  width: 300px;
   font-size: 18px;
   border-radius: 5px;
    -webkit-appearance: textfield;
@@ -199,9 +200,10 @@ h6{
   color: #a17f1a;
 	justify-content: center;
 	margin: auto;
-	font-size: 1em;
+	font-size: 1.2em;
   font-weight: 800;
-	
+  line-height: 120%;
+	letter-spacing: 0em;
 }
 
 .log{
