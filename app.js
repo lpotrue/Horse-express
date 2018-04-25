@@ -1,5 +1,5 @@
 // dependencies
-var express = require('express');
+//var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -12,7 +12,9 @@ var flash = require('connect-flash');
 //var multer = require('multer');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-//const fileUpload = require('express-fileupload');
+const fileUpload = require('express-fileupload');
+const express = require('express');
+const aws = require('aws-sdk');
 
 var app = express();
  //app.use(fileUpload());
@@ -20,12 +22,17 @@ var app = express();
 
  //app.use('/fileuploads', express.static(path.join(__dirname, '/fileuploads')));
 
+app.set('views', './views');
+app.use(express.static('./public'));
+//app.engine('html', require('ejs').renderFile);
+//app.listen(process.env.PORT || 3000);
 
-
-
+const S3_BUCKET = process.env.S3_BUCKET;
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.post('/save-details', (req, res) => {
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
