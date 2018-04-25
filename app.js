@@ -1,5 +1,5 @@
 // dependencies
-//var express = require('express');
+var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -13,7 +13,7 @@ var flash = require('connect-flash');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 const fileUpload = require('express-fileupload');
-const express = require('express');
+//const express = require('express');
 const aws = require('aws-sdk');
 
 var app = express();
@@ -22,8 +22,7 @@ var app = express();
 
  //app.use('/fileuploads', express.static(path.join(__dirname, '/fileuploads')));
 
-app.set('views', './views');
-app.use(express.static('./public'));
+
 //app.engine('html', require('ejs').renderFile);
 //app.listen(process.env.PORT || 3000);
 

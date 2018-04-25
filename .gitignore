@@ -6,6 +6,3 @@
 *~
 node_modules
 *.out
-*.sw*
-*.env
-npm-debug.log
