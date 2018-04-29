@@ -10,18 +10,11 @@ const upload = multer({ dest: './public/uploads/' }).single('pic');
 const router = express.Router();
 
 const aws = require('aws-sdk');
-aws.config.region = ('us-west-1');
+aws.config.region = 'us-west-1';
 const S3_BUCKET = process.env.S3_BUCKET;
   console.log("fresh")
   console.log("S3_BUCKET", S3_BUCKET) 
 
-/*
-var express = require('express');
-var fs = require('fs'); // file system, to save files
-var request = require('request');
-var url = require('url'); // to parse URL and separate filename from path
-var progress = require('progress-stream'); // to have a progress bar during upload
-*/
 
 
 router.get('/', (req, res) => {
@@ -262,5 +255,7 @@ router.get('/sign-s3', (req, res) => {
     res.write(JSON.stringify(returnData));
     res.end();
   });
+});
+router.post('/save-details', (req, res) => {
 });
 module.exports = router;
