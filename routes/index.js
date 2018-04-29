@@ -10,7 +10,7 @@ const upload = multer({ dest: './public/uploads/' }).single('pic');
 const router = express.Router();
 
 const aws = require('aws-sdk');
-aws.config.region = 'us-west-1';
+aws.config.region = ('us-west-1');
 const S3_BUCKET = process.env.S3_BUCKET;
   console.log("fresh")
   console.log("S3_BUCKET", S3_BUCKET) 
@@ -198,13 +198,12 @@ router.delete('/entry/:id', loggedIn, (req, res) => {
   .exec()
     .then(entry => {
      console.log(entry)
-     //res.redirect('/')
      res.send({redirect: `/horse/${entry.horse}`});
      entry.remove()
     })
     .catch(err => { console.error(err)});
   console.log(`Deleted an entry`);
-  //res.status(204).end();
+  
 });
 
 router.get('/logout', loggedIn, (req, res, next) => {
@@ -230,14 +229,8 @@ function loggedIn(req, res, next) {
         res.redirect('/');
     }
 }
-
-function randomIpsum(){
-  $.get("https://loripsum.net/api/plaintext/1", function(data, status){
-        console.log("Data: " + data + "\nStatus: " + status);
-        return data
-    });
  
-}
+
 /*
  * Respond to GET requests to /sign-s3.
  * Upon request, return JSON containing the temporarily-signed S3 request and

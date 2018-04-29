@@ -9,24 +9,12 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var flash = require('connect-flash');
-//var multer = require('multer');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-const fileUpload = require('express-fileupload');
-//const express = require('express');
-const aws = require('aws-sdk');
+
 
 var app = express();
- //app.use(fileUpload());
-
-
- //app.use('/fileuploads', express.static(path.join(__dirname, '/fileuploads')));
-
-
-//app.engine('html', require('ejs').renderFile);
-//app.listen(process.env.PORT || 3000);
-
-const S3_BUCKET = process.env.S3_BUCKET;
+ 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
