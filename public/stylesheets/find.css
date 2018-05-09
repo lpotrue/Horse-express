@@ -1,5 +1,6 @@
 #background-all{
   text-align: center;
+  min-height: 100vh;
 }
 .container{
   height: 20vh;

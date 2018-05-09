@@ -32,18 +32,17 @@ form{
 
 .img-circle {
 	box-sizing: border-box;
-    
-    height: 300px;
-    margin-left: 3%;
-    margin-top: 3%;
-   align-content: right;
+  height: 350px;
+  margin-left: 3%;
+  margin-top: 3%;
+  align-content: right;
 }
 @media only screen and (max-width: 600px) {
 	.img-circle {
-		height: 20px;
+		height: 300px;
 		margin: 0;
 		margin-top: 2%;
-		width: 200px;
+		width: 300px;
 	}
 }
 
@@ -263,14 +262,17 @@ h3 {
 }
 
 .b{
+  padding: 10px;
   width: 150px;
   align-content: center;
-  margin-top: 5%;
+  margin-top: 10%;
   text-align: center;
-  color: #a17f1a;
-  margin-bottom: 5px;
+  color: white;
+  background-color: black;
+  border-color: #a17f1a;
+  margin-bottom: 0px;
   text-transform: uppercase;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 
@@ -280,9 +282,8 @@ h3 {
 }
 
 .b:hover{
+  background-color: darkgrey;
   color: black;
-  background-color: #a17f1a;
-  border-color: #a17f1a;
   cursor: pointer;
 }
 

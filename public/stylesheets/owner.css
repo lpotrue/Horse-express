@@ -1,6 +1,6 @@
 
-#back{
-	height: 100%;
+#background-all{
+	min-height: 100vh;
 }
 
 a.btnss:hover{
