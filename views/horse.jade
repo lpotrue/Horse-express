@@ -15,14 +15,13 @@ block content
             
            
            
-      
-    
-    h3 #{horse.horsename}'s Entries
-       button(class="toggle" id='toggle-switch') Show
      
+    h3 #{horse.horsename}'s Entries
+       
     each entry in entries
+
         li
-         
+         button(class="toggle" id='toggle-switch') Show
          h6 #{entry.date} 
          
           
@@ -43,7 +42,7 @@ block content
 
          form(role='form', action="", method="post", style='max-width: 300px;')
           .form-group
-             textarea.form-control(type='text', name="entry", placeholder='Write an entry about #{horse.horsename} here')
+             textarea.form-control(type='text', name="entry", placeholder='Write an entry about #{horse.horsename} here:')
              
       
             button.bt(type='submit') Submit
@@ -51,6 +50,7 @@ block content
             a(href='/')
               button.bt(type="confirm" id="confirm") Cancel
 
+          
+        button.b(type='delete' id='delete' class="confirm") Delete #{horse.horsename}?
            
-        
          

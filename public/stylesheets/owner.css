@@ -1,18 +1,13 @@
-html{
-	height: 100vh;
-}
 
-body{
-	height: 100vh;
-}
-
-#background-all{
-	height: 100vh;
+#back{
+	height: 100%;
 }
 
 a.btnss:hover{
 	color: black;
 }
+
+
 
 h4{
 	text-transform: uppercase;

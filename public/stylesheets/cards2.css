@@ -102,8 +102,7 @@ h3 {
   background: @white;
   display: inline-block;
   margin: 8px;
-  max-width: 350px;
-  min-width: 350px;
+  width: 350px;
   perspective: 1000;
   position: relative;
   text-align: left;
@@ -121,9 +120,7 @@ h3 {
       width: 300px;
     }
   }
-  /*.card-image {
-    max-width: 300px;
-  }*/
+  
   .card-image {
   height: 300px;
   background-position: top center;

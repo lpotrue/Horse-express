@@ -3,16 +3,19 @@ $(document).ready(function (){
   
 $("#delete").click(function(){  
   console.log("I clicked delete")
-  $.ajax({
+  var conf = confirm("ARE YOU SURE YOU WANT TO PERMANENTLY DELETE THIS HORSE?");
+  if (conf == false)
+   {history.go(0);}
+  else{
+ $.ajax({
     url: '',
     type: 'DELETE',
     success: function(result) {
       console.log(result)
       window.location = result.redirect
-       
     }
-});
-
+    });
+  }
 });
 
 $(".back").click(function(){
@@ -43,7 +46,7 @@ $('.toggle').click(function() {
 
 
 $('.toggle').click(function(){
-    var text = $(this).text();
+    var text = $(this).text(); 
     if (text=="Show") { /*if text inside #toggleMessage is Show...*/
       $(this).text("Hide"); /*Change button text to Hide*/
      }
@@ -78,7 +81,7 @@ function showSlides() {
 
       slides[slideIndex-1].style.display = "block";  
       dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 3000);
+      setTimeout(showSlides, 5000);
     } // Change image every 3 seconds
 }
 
@@ -115,7 +118,8 @@ showSlides();
         if(xhr.readyState === 4){
           if(xhr.status === 200){
             document.getElementById('preview').src = url;
-            document.getElementById('avatar-url').value = url;
+            document.getElementById('avatar-url').value = url("https://image.ibb.co/jyLgfm/caramiaarena.jpg");
+
           }
           else{
             alert('Could not upload file.');

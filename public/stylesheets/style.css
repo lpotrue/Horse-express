@@ -146,8 +146,6 @@ h2 { letter-spacing: normal;
 
 h3 {
 font-weight: normal;
-padding-top: 30%;
-color: white;
 }
 
 h4 {
@@ -164,10 +162,11 @@ h5 {
   font-weight: lighter;
   color: white;
   margin: auto;
-  font-size: 3em;
+  font-size: 2em;
+
 }
-@media only screen and (max-width: 500px) {
-h5 {font-size: 1.5em;
+@media only screen and (max-width: 560px) {
+h5 {font-size: 1em;
  }
 }
 
@@ -274,13 +273,17 @@ img.logo:hover {
   width: 100%;
   filter: alpha(opacity=80); 
   color: white;
-  margin-left: 50px;
   margin-bottom: 3%;
   position: relative; 
   text-decoration: none;
 }
+@media only screen and (max-width: 750px) {
+.logged-in {
+  margin-left: 50px;
+ }
+}
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 562px) {
 .logged-in {
   margin-left: 0;
   text-align: right;

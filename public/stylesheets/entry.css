@@ -4,8 +4,14 @@
 
 #background-all{
   height: 100vh;
+  padding-top: 25%;
+}
+
+h3{
+	padding-top: 10px;
 }
 
 html{
   top: 0;
 }
+

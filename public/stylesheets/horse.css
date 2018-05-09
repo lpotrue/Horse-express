@@ -32,7 +32,7 @@ form{
 
 .img-circle {
 	box-sizing: border-box;
-    border-radius: 50%;
+    
     height: 300px;
     margin-left: 3%;
     margin-top: 3%;
@@ -260,6 +260,30 @@ h3 {
  margin: auto;
  text-align: center;
  padding-bottom: 3%;
+}
+
+.b{
+  width: 150px;
+  align-content: center;
+  margin-top: 5%;
+  text-align: center;
+  color: #a17f1a;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+
+.b:active{
+  background-color: #a17f1a;
+  border-color: #a17f1a;
+}
+
+.b:hover{
+  color: black;
+  background-color: #a17f1a;
+  border-color: #a17f1a;
+  cursor: pointer;
 }
 
 #toggle-switch{

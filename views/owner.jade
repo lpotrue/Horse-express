@@ -3,6 +3,7 @@ extends layout
 block content
   link(rel='stylesheet', href='/stylesheets/cards2.css')
   link(rel='stylesheet', href='/stylesheets/button.css')
+  link(rel='stylesheet', href='/stylesheets/owner.css')
 
 
   #background-all
@@ -10,13 +11,13 @@ block content
      .intro #{intro}
        
         if (!user)
-          a(href="/login") Login
+          a(href="/") Login
           br
-          a(href="/register") Register
+          a(href="/") Register
         if (!horses)
            hasn't added any horses
         if (user)    
-       
+       #back 
        .cards
         each horse in horses
          .card

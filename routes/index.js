@@ -9,6 +9,8 @@ const multer = require('multer');
 const upload = multer({ dest: './public/uploads/' }).single('pic');
 const router = express.Router();
 
+
+
 const aws = require('aws-sdk');
 aws.config.region = 'us-west-1';
 const S3_BUCKET = process.env.S3_BUCKET;
@@ -61,7 +63,8 @@ router.get('/owner/:id', loggedIn, (req, res) => {
 
        let intro = 'no horses yet...'
         if (horses.length>0){
-         intro = horses[horses.length-1].ownername
+         intro = horses[horses.length-1].ownername +"'s" + "\xa0" + "horses"
+
         }
         res.render('owner', { user : req.user, horses: horses, intro: intro });
     })
@@ -81,8 +84,6 @@ router.get('/entry/:id', loggedIn, (req, res) => {
     })
 })
 
-
-
 router.get('/horse/:id', loggedIn, (req, res) => {
     console.log("random horse", req.params)
     let horse = ''
@@ -96,9 +97,9 @@ router.get('/horse/:id', loggedIn, (req, res) => {
             .find({horse: req.params.id})
             .exec()
             .then(entries => {
-                console.log(entries)
-                res.render('horse', { user : req.user, horse: horse, entries: entries });
-                res.end()
+
+            res.render('horse', { user : req.user, horse: horse, entries: entries });
+            res.end()
             })
 
             .catch(err => { console.error(err)});
@@ -114,6 +115,7 @@ router.post('/add-horse', loggedIn, (req, res) => {
            throw err;
            return res.end("Error uploading file.");
        }
+
 
       
        let randomIpsum = "to be continued"
@@ -197,6 +199,22 @@ router.delete('/entry/:id', loggedIn, (req, res) => {
     .catch(err => { console.error(err)});
   console.log(`Deleted an entry`);
   
+});
+
+router.delete('/horse/:id', loggedIn, (req, res) => {
+  console.log("walrus")
+  Horse.findOne({'_id':req.params.id})
+  .exec()
+    .then(horse => {
+  
+     res.send({redirect: `/profile`});
+     horse.remove()
+    })
+  
+    .catch(err => { console.error(err)});
+
+    console.log(`Deleted horse`);
+    
 });
 
 router.get('/logout', loggedIn, (req, res, next) => {

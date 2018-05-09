@@ -48,12 +48,14 @@
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 500px;
-  width: 400px;
+  height: 400px;
+  width: 500px;
   margin: auto;
 }
 @media only screen and (max-width: 500px) {
-  .slide-image {width: 100%;}
+  .slide-image {height: 300px;
+                width: 100%; 
+                padding-top: 25px;}
 }
 
 .active {

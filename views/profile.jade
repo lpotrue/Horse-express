@@ -5,7 +5,7 @@ block content
   link(rel='stylesheet', href='/stylesheets/slides.css')
   link(rel='stylesheet', href='/stylesheets/button.css')
   link(rel='stylesheet', href='/stylesheets/profile.css')
-
+  
   #background-all
    .container
      if(horses)
@@ -25,7 +25,6 @@ block content
          img(src="#{horse.url[0]}", class="card-image")
         .card-title
          #{horse.horsename}
-    
          
          h2
           | #{horse.horsename}
@@ -41,10 +40,11 @@ block content
                 span #{horse.breed}  
 
           a.btnss(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
+
      if (!user)
-      a(href="/login") Login
+      a(href="/") Login
+      a(href="/") Register
       br
-      a(href="/register") Register
      if (user)
      .add
       h6 Add a Horse 
@@ -57,10 +57,11 @@ block content
              input.form-control(type='text', name="breed", placeholder='Enter Breed', required='')
          .form-group
              input.form-control(type='text', name="discipline", placeholder='Enter Discipline', required='')
+             input(type="hidden", id="avatar-url")
              input#file-input(type='file', name='pic', required='')
              img#preview(height='200')
          
          button.btnss(type='submit') Submit
           
-         a(href='/')
-         button.btnss(type="button") Cancel
+         a(href='/profile')
+          button.btnss(type="button") Cancel

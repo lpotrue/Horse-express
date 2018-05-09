@@ -18,7 +18,8 @@ html
        img.logo(src="https://image.ibb.co/mKESz7/IMG_4222.jpg" alt="Logo")
       if (user)
        .logged-in
-         h5 Hello, #{user.username}!
+         
+         h5 #{user.username}
          a.navigator(href="/profile") Profile
          a.navigator(href="/find") Find Horse
          a.navigator(href="/logout") Logout

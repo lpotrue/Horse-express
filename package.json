@@ -18,7 +18,7 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.3.3",
     "debug": "^2.1.1",
-    "express": "^4.11.1",
+    "express": "4.x",
     "express-fileupload": "^0.2.0",
     "express-session": "^1.10.1",
     "jade": "^1.9.1",
@@ -31,6 +31,7 @@
     "passport-local-mongoose": "^1.0.0",
     "serve-favicon": "^2.2.0",
     "should": "~2.1.0",
-    "aws-sdk": "2.x"
+    "aws-sdk": "2.x",
+    "ejs": "2.x"
   }
 }
