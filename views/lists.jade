@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/cards2.css')
+  link(rel='stylesheet', href='/stylesheets/button.css')
+  link(rel='stylesheet', href='/stylesheets/owner.css')
+
+
+  #background-all
+     .container
+     .intro #{intro}
+       
+        if (!user)
+          a(href="/") Login
+          br
+          a(href="/") Register
+        if (!horses)
+           hasn't added any horses
+        if (user)    
+       #back 
+       .cards
+        each horse in horses
+         .card
+          .card-image
+           img(src="#{horse.url[0]}", class="card-image")
+          .card-title
+           #{horse.horsename}
+            h2
+             | #{horse.horsename}
+         
+            .card-content
+               p
+                 h4 Born:
+                 
+                   span #{horse.age}
+                 
+                 h4 Breed:
+                 
+                   span #{horse.breed}      
+             a.btnss(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
+        
+             
+                    

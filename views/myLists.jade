@@ -1,0 +1,67 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/cards2.css')
+  link(rel='stylesheet', href='/stylesheets/slides.css')
+  link(rel='stylesheet', href='/stylesheets/button.css')
+  link(rel='stylesheet', href='/stylesheets/profile.css')
+  
+  #background-all
+   .container
+     if(horses)
+      .slideshow-container
+      each horse in horses
+         .mySlides.fade
+          img(src="#{horse.url[0]}", class="slide-image")
+          .text #{horse.horsename}
+            div(style='text-align:center')
+    each horse in horses
+        span.dot
+   
+     .cards
+      each horse in horses
+       .card
+        .card-image
+         img(src="#{horse.url[0]}", class="card-image")
+        .card-title
+         #{horse.horsename}
+         
+         h2
+          | #{horse.horsename}
+       
+         .card-content
+            p
+              h4 Born:
+               
+                span #{horse.age}
+               
+              h4 Breed:
+               
+                span #{horse.breed}  
+
+          a.btnss(href="/horse/"+horse._id)  #{horse.horsename}'s Profile
+
+     if (!user)
+      a(href="/") Login
+      a(href="/") Register
+      br
+     if (user)
+     .add
+      h6 Add a Horse 
+        form(role='form', action="/add-horse", method="post", style='max-width: 350px;' enctype="multipart/form-data")
+         .form-group
+             input.form-control(type='text', name="horsename", placeholder='Enter Horsename', required='')
+         .form-group
+             input.form-control(type='year', name="age", placeholder='Year of Birth', required='')
+         .form-group
+             input.form-control(type='text', name="breed", placeholder='Enter Breed', required='')
+         .form-group
+             input.form-control(type='text', name="discipline", placeholder='Enter Discipline', required='')
+             input(type="hidden", id="avatar-url")
+             input#file-input(type='file', name='pic', required='')
+             img#preview(height='200')
+         
+         button.btnss(type='submit') Submit
+          
+         a(href='/profile')
+          button.btnss(type="button") Cancel
